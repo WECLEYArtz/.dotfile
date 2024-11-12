@@ -1,0 +1,14 @@
+#this file is automatically created, and saves paths for each file
+#used to undo a linking or redo it
+
+[ .bash_aliases ]
+TRGET=	/home/wec/.dotphile/.bash_aliases
+SMLNK=	/home/wec/.bash_aliases
+
+[ nvim ]
+TRGET=	/home/wec/.dotphile/nvim
+SMLNK=	/home/wec/.config/nvim
+
+[ .gitconfig ]
+TRGET=	/home/wec/.dotphile/.gitconfig
+SMLNK=	/home/wec/.gitconfig
