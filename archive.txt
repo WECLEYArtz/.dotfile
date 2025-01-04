@@ -12,3 +12,24 @@ SMLNK=	/home/wec/.config/nvim
 [ .gitconfig ]
 TRGET=	/home/wec/.dotphile/.gitconfig
 SMLNK=	/home/wec/.gitconfig
+
+[ syncd ]
+TARGET=	/home/wec/.dotphile/syncd
+SMLINK=	/usr/local/bin/syncd
+
+[ zathurarc ]
+TARGET=	/home/wec/.dotphile/zathurarc
+SMLINK=	/home/wec/.config/zathura/zathurarc
+
+[ kitty ]
+TARGET=	/home/wec/.dotphile/kitty
+SMLINK=	/home/wec/.config/kitty
+
+[ .bashrc ]
+TARGET=	/home/wec/.dotphile/.bashrc
+SMLINK=	/home/wec/.bashrc
+
+[ Default ]
+TARGET=	/home/wec/.dotphile/Default
+SMLINK=	/home/wec/.config/BraveSoftware/Brave-Browser/Default
+

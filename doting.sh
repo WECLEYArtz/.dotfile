@@ -1,52 +1,18 @@
 #!/bin/bash
 # set -e
 if [ "$1" == "-v" ]; then
-	echo "version 0.98, by din dimakley"
+	echo "version 0.99, by din dimakley"
 	exit 0
 elif [ -z "$1" ] || [ -z "$2" ] ;then
 	echo "Missing argument: bash doting.sh {option} {path_to_file/dir or file_name}"
-	exit 0
+	exit 1
 fi
 
-DOTFILE_PATH=$(pwd)	#path to dotfile folder
+DOTFILE_PATH=$(pwd)		#path to dotfile folder
 CONFG="archive.txt"
-SYM_OPT='-s' 	#linking option -s -sf
+SYM_OPT='-s' 			#linking option -s -sf
 
-# ===[ INITIALISING FUNCTIONS ]=== #
-
-erex(){ #check and exit if error, avoid pouring fuel on the fire
-	# echo "nn hh $1" >> /dev/tty
-	if [[ $1 -ne 0 ]]; then
-		echo "✖ error." >> /dev/tty
-		exit $1
-	else
-		echo "✓ Done."  >> /dev/tty
-
-	fi
-}
-
-symlinking(){
-	# echo "ln $SYM_OPT $SYM_TAR $SYM_LOC" >> /dev/tty
-	ln $SYM_OPT $SYM_TAR $SYM_LOC #linking command
-	erex
-}
-
-update()
-{
-	echo "... updating $CONFG" 
-
-	printf "\n[ $TOSYM_NAME ]\n" >> $CONFG
-	printf "TRGET=	$DOTFILE_PATH/$TOSYM_NAME\n" >> $CONFG
-	printf "SMLNK=	$TOSYM_PATH" >> $CONFG
-}
-
-unarchive(){
-	LINE_A=$(awk "/ $1 / {printf NR}" $CONFG)
-	LINE_B=$((LINE_A + 3))
-	sed -i "$LINE_A , $LINE_B d" $CONFG
-
-	erex
-}
+# -----------------[ INITIALISING FUNCTIONS ]-----------------
 
 ask(){
 	read -p "create and continue? (y/n):" INP
@@ -62,82 +28,49 @@ ask(){
 	esac
 }
 
-isexist(){
-	if  [ -f "$2" ] || [ -d "$2" ];then
-		echo "REJECTED!"
-		echo "File is already in Dotfile directory or is symlink for it,"
-		echo "make sure $CONFG is updated."
-		exit 5
-	elif [ ! -f "$1" ] && [ ! -d "$1" ];then
-		echo "No '$1' file found."
-		exit 2
-	fi
-	# if [ ! -f "$2$1" ];then
-	# 	echo "No file found."
-	# 	exit 2
-	# fi
-}
-
 creatin(){
-	echo "creatig installer"
+	echo "creatig $CONFG"
 	touch $CONFG  
-	printf "\n#this file is automatically created, and saves paths for each file\n#used to undo a linking or redo it\n\n" >> $CONFG
 
-	erex
+	erex $? "creation failed" "created"
+
+	printf "This file is automatically created, stores paths of doted file\n#neccesary to perform undos and redos\n\n" >> $CONFG
 }
 
-doting()
-{
-	TOSYM_NAME=$(basename $1) #file name extraction
-	TOSYM_PATH=$1	#the argument that is the target file to be doted
+erex(){ 	#checks and exit if error, avoid pouring fuel on the fire
+			# erex {exit code} {error message} {success message} (message or "-none")
+	EREX_MSG_SUCCESS="✓ Done.\n"
+	EREX_MSG_ERROR="✖ error.\n"
 
-	isexist $1 $DOTFILE_PATH/$TOSYM_NAME
-	printf " ____      _   _____ _   _ _     \n"
-	printf "|    \ ___| |_|  _  | |_|_| |___ \n"
-	printf "|  |  | . |  _|   __|   | | | -_|\n"
-	printf "|____/|___|_| |__|  |_|_|_|_|___|\n\n"
+	if [ "$2" == "-none" ]; then
+		EREX_MSG_ERROR=
+	elif [ -n "$2" ]; then
+		EREX_MSG_ERROR="✖ $2\n"
+	fi
 
-	printf "DOTFILE PATH: set to currind location : $DOTFILE_PATH \n\n"
+	if [ "$3" == "-none" ]; then
+		EREX_MSG_SUCCESS=
+	elif [ -n "$3" ]; then
+		EREX_MSG_SUCCESS="✓ $3\n"
+	fi
 
-	printf "... moving		'$TOSYM_NAME'	to	$DOTFILE_PATH/$TOSYM_NAME \n"
-	mv $TOSYM_PATH $DOTFILE_PATH 
+	case $3 in
+	esac
 
-	printf "... symlinking	'$TOSYM_NAME'	to	$TOSYM_PATH \n"
-	#INITIALISING SYMLINKING COMMAND ARGUMENT
-	SYM_TAR="$DOTFILE_PATH/$TOSYM_NAME"
-	SYM_LOC=$TOSYM_PATH
-	#CALLING COMMAND
-	symlinking
-	update
+	if [[ $1 -ne 0 ]]; then
+		printf "$EREX_MSG_ERROR" >> /dev/tty
+		exit $1
+	else
+		printf "$EREX_MSG_SUCCESS" >> /dev/tty
 
-	erex
+	fi
 }
-
-
-resymlink()
-{
-	set -e #i dont wanna set erex for every rm and mv
-
-	isexist $1
-	echo "... reinstalling symlink for $1"
-
-	TRGET=$(getpath-archive $1 2)
-	SMLNK=$(getpath-archive $1 3)
-
-	#INITIALISING SYMLINKING COMMAND ARGUMENT
-	SYM_TAR=$TRGET
-	SYM_LOC=$SMLNK
-	SYM_OPT='-sf'
-	#CALLING COMMAND
-	symlinking || exit $?
-	}
 
 getpath-archive()
 {
 	# set -e
 	grep -A2 " $1 " $CONFG >> /dev/null #test command incase of errors, for set -e
-	# echo "nn hh $?" >> /dev/tty
-	erex $? || exit $?
+	erex $? "bad grep" "-none" || exit $?
 
 	#second arg: (1 file name, 2 TRGET, 3 SMLNK)
 	PATHH=$(\
@@ -145,6 +78,124 @@ getpath-archive()
 		awk -v FS='\t' "NR==$2 {print \$2}"
 	)
 	echo "$PATHH"	
+}
+
+isexist(){
+	if  [ -e "$2" ];then #only for doting()
+		printf "✖ REJECTED : File is already in Dotfile directory or is symlink for it,\n"
+		printf "make sure $CONFG is updated.\n"
+		exit 5
+	elif [ ! -e "$1" ];then
+		echo "No '$1' file found."
+		exit 2
+	fi
+}
+
+
+print-header()
+{
+	printf "     ____      _   _____ _   _ _     	\n"
+	printf "    |    \ ___| |_|  _  | |_|_| |___ 	\n"
+	printf "    |  |  | . |  _|   __|   | | | -_|	\n"
+	printf "___ |____/|___|_| |__|  |_|_|_|_|___| o ____________________\n\n"
+
+	printf "    DO NOT USE THIS SCRIPT OUTSIDE YOUR DOTFILE DIRECTORY!\n"
+	printf "    IF USED, UNDO THE PROCESS.\n\n"
+}
+
+symlinking(){
+	# echo "ln $SYM_OPT $SYM_TAR $SYM_LOC" >> /dev/tty
+	ln $SYM_OPT $SYM_TAR $SYM_LOC #linking command
+	erex $? "syming error"
+}
+
+unarchive(){
+	LINE_A=$(awk "/ $1 / {printf NR}" $CONFG)
+	LINE_B=$((LINE_A + 3))
+	sed -i "$LINE_A , $LINE_B d" $CONFG
+
+	erex $? "unarchive error"
+}
+
+update()
+{
+	echo "... updating $CONFG" 
+
+	printf "[ $TOSYM_NAME ]\n" >> $CONFG
+	printf "TARGET=	$DOTFILE_PATH/$TOSYM_NAME\n" >> $CONFG
+	printf "SMLINK=	$TOSYM_PATH\n\n" >> $CONFG
+}
+
+safe-rm()
+{
+	if [ -e $SMLNK ] ; then
+		if [ -L $SMLNK ] ; then
+			ANSWER="y"
+		elif [ -f $1 ] ; then
+			read -p "WARNING : '$1' is an existing file, replace with a symlink? (y/n): "\
+				ANSWER
+		elif [ -d $1 ] ; then
+			read -p "WARNING : '$1' is an existing directory, replace with a symlink? (y/n): "\
+				ANSWER
+		fi
+		case $ANSWER in
+			'y') rm -r $1
+				if [ -e $1 ] ; then
+					echo "✖ failed to remove $1"
+					exit 1
+				else
+					echo "✓ removed $1 successfully."
+				fi
+				;;
+			*) echo "aborting"
+				exit
+				;;
+		esac
+	fi
+}
+
+# -----------------[ PRIMARY FUNCTIONS ]-----------------
+
+doting()
+{
+	TOSYM_NAME=$(basename $1)		#file name extraction
+	TOSYM_PATH=$1
+	isexist $1 $DOTFILE_PATH/$TOSYM_NAME
+
+	# printf "DOTFILE PATH: $DOTFILE_PATH \n\n"
+
+	printf "... moving		'$TOSYM_NAME'	to	$DOTFILE_PATH/$TOSYM_NAME \n"
+	mv $TOSYM_PATH $DOTFILE_PATH 
+
+	printf "... symlinking	'$TOSYM_NAME'	to	$TOSYM_PATH \n"
+	#	Initialising symlinking command argument
+	SYM_TAR="$DOTFILE_PATH/$TOSYM_NAME"
+	SYM_LOC=$TOSYM_PATH
+
+	#	Calling command
+	symlinking
+	update
+
+	erex $? "doting error" "complete"
+}
+
+resymlink()
+{
+	set -e		#i dont wanna set erex for every rm and mv
+
+	isexist $1
+	echo "... reinstalling symlink for $1"
+
+	TRGET=$(getpath-archive $1 2)
+	SMLNK=$(getpath-archive $1 3)
+
+	#	Initialising symlinking command argument
+	SYM_TAR=$TRGET
+	SYM_LOC=$SMLNK
+	#	Verify file
+	safe-rm	$SMLNK
+	#	Calling command
+	symlinking || exit $?
 }
 
 undo()
@@ -158,31 +209,51 @@ undo()
 	SMLNK=$(getpath-archive "$1" 3)
 	TRGET=$(getpath-archive "$1" 2)
 
-	rm "$SMLNK"
+	safe-rm	$SMLNK
 	mv "$TRGET" "$SMLNK"
 
 	unarchive $1 || exit $?
 }
+# -----------------[ APPLICATION  ]-----------------
 
-
-# ===[ APPLICATION  ]=== #
-
-if [ ! -f $CONFG ]; then #CREAT ARCHIVE
-	echo "no installer found. "
-	ask
-fi
 
 case $1 in
-	're')resymlink $2
+	'-r' | 're' | 'redo')
+
+		# print-header
+		if [ ! -f $CONFG ]; then 		#Creat archive
+			echo "no archiving file found, must have added files. "
+			exit 1
+		fi
+		resymlink $(basename $2)	#get and convert to name if path used.
+		exit 
+		;;
+
+	'-u' | 'un' | 'undo')
+
+		# print-header
+		if [ ! -f $CONFG ]; then 		#Creat archive
+			echo "no archiving file found, must have added files. "
+			exit 1
+		fi
+		undo $(basename $2)
 		exit
 		;;
-	'un')undo $2
+
+	'-a' | 'ad' | 'add')
+
+		if [ ! -f $CONFG ]; then 		#Creat archive
+			echo "no archiving file found. "
+			ask
+		fi
+		# print-header
+		doting $(readlink -f $2)	#get and convert to absolute path if ../ used.
 		exit
 		;;
-	'ad')doting $2
-		exit
-		;;
-	*)	echo "Unavailible argument, ('ad' \ 're' \ 'un')."
-		exit
+
+	*)	echo "Unavailible argument, use : ('add' \ 'redo' \ 'undo')."
+		echo "                       or : ( 'ad' \  're'  \  'un' )."
+		echo "                       or : ( '-a' \  '-r'  \  '-u' )."
+		exit 1
 		;;
 esac
