@@ -1,0 +1,3 @@
+set selection-clipboard clipboard
+map n scroll down
+map e scroll up
