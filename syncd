@@ -1,0 +1,115 @@
+#!/bin/bash
+
+# options : 
+#	directory option
+#	delet, keep
+#	direction
+
+# Facebook				X
+# ScreenRecoredss		X
+# Camera :				X
+#   1337mems/			X
+#   desert/				X
+#   selfymyass/			X
+#   thefellas/			x
+
+#	music
+
+# to do: keep and delet options
+
+DCIM_Mobile="/home/wec/mnt/Internal shared storage/DCIM/"
+DCIM_Pc="/home/wec/Pictures/Side pics/DCIM/"
+
+VIDEO_Mobile="/home/wec/mnt/Internal shared storage/Download/Vidooz/"
+VIDEO_Pc="/home/wec/Videos/"
+
+MUSIC_Mobile="/home/wec/mnt/Internal shared storage/Download/Muzik/"
+MUSIC_Pc="/home/wec/Music/"
+
+DOCS_Mobile="~/mnt/Internal shared storage/Documents/"
+DOCS_Pc="/home/wec/Documents/"
+
+DEBUG_DIR1="/home/wec/jotiya/dir1/"
+DEBUG_DIR2="/home/wec/jotiya/dir2/"
+
+OUT_WORD2=deleting
+
+DEL="--delete"
+
+#===[ OPTIONS ]===\
+
+printf "[1] DCIM\n[2] VIDEOS\n[3] MUSIC\n[4] DOCUMENTS\n[5] DOWNLOADS\n\n"
+read -p "> " DIR
+
+clear
+printf "[1] PC <= Mobile\n[2] PC => Mobile\n"
+read -p "> " FROMTO
+
+clear
+read -p "keep files? > (y/n) " KEEP
+
+clear
+#===========================================/
+
+case $DIR in
+	1)
+		DIR_Mobile=$DCIM_Mobile
+		DIR_Pc=$DCIM_Pc
+		OUT_WORD1=DCIM
+		;;
+	2)
+		DIR_Mobile=$VIDEO_Mobile
+		DIR_Pc=$VIDEO_Pc
+		OUT_WORD1=Videos
+		;;
+	3)
+		DIR_Mobile=$MUSIC_Mobile
+		DIR_Pc=$MUSIC_Pc
+		OUT_WORD1=Music
+		;;
+	4)
+		DIR_Mobile=$DOCS_Mobile
+		DIR_Pc=$DOCS_Pc
+		OUT_WORD1=Documents
+		;;
+	5)
+		DIR_Mobile=$DOWNS_Mobile
+		DIR_Pc=$DOWNS_Pc
+		OUT_WORD1=Downloads
+		;;
+	6)
+		DIR_Mobile=$DEBUG_DIR1
+		DIR_Pc=$DEBUG_DIR2
+		OUT_WORD1=Debug
+		;;
+	esac
+
+
+if [ $KEEP == "y" ]; then
+	DEL=""
+	OUT_WORD2=keepig
+fi
+
+case $FROMTO in
+	1)
+		SRC=$DIR_Mobile
+		DIS=$DIR_Pc
+		;;
+	2)
+		SRC=$DIR_Pc
+		DIS=$DIR_Mobile
+		;;
+esac
+
+echo Synconizing $OUT_WORD1 in PC from Mobile while $OUT_WORD2  ... 
+
+rsync -r $DEL --itemize-changes --info=progress2 --info=name0 --ignore-times --size-only "$SRC" "$DIS" 
+
+if [ $? -gt 0 ]; then
+	echo error.
+	exit
+else
+	sleep 0.2
+	echo done
+	exit
+fi
