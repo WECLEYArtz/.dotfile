@@ -32,7 +32,10 @@ return {
 						--     end,
 						-- },
 						buf_name = {
-							mode = "'unique'|'relative'|'tail'|'shorten'",
+							-- mode = 'shorten',
+							-- mode = 'tail',
+							-- mode = 'relative',
+							-- mode = 'unique',
 						},
 					},
 					line = function(line)
