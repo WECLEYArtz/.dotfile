@@ -18,6 +18,7 @@ vo.shiftwidth = 4
 
 
 vo.ignorecase = true -- easier search
+vo.formatoptions:remove {"t","c","r","o"}
 
 -- vim.opt.termguicolors = true
 

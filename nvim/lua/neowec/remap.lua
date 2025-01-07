@@ -6,7 +6,7 @@ vim.keymap.set({"n","v"}, "e","k", {noremap = true})
 vim.keymap.set({"n","v"}, "i","l", {noremap = true})
 
 vim.keymap.set({"n","v"}, "l","i", {noremap = true})
-vim.keymap.set({"n","v","i"}, "<leader><leader>","<cr>")
+-- vim.keymap.set({"n","v","i"}, "<leader><leader>","<cr>")
 vim.keymap.set("n", "<leader>e", function()
     vim.cmd.Neotree("reveal")
 end)
@@ -29,3 +29,6 @@ vim.keymap.set({"n","v"}, "<leader>wn","<C-W>j")
 vim.keymap.set({"n","v"}, "<leader>we","<C-W>k")
 vim.keymap.set({"n","v"}, "<leader>wi","<C-W>l")
 vim.keymap.set({"n","v"}, "<leader>wh","<C-W>h")
+
+-- mass rename
+vim.keymap.set("n", "<leader>vrn", ":IncRename ")
