@@ -33,3 +33,7 @@ SMLINK=	/home/wec/.bashrc
 TARGET=	/home/wec/.dotphile/Default
 SMLINK=	/home/wec/.config/BraveSoftware/Brave-Browser/Default
 
+[ compton.conf ]
+TARGET=	/home/wec/.dotphile/compton.conf
+SMLINK=	/home/wec/.config/compton.conf
+
