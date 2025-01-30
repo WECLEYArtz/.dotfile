@@ -7,7 +7,7 @@
   "hlchunk.nvim": { "branch": "main", "commit": "5465dd33ade8676d63f6e8493252283060cd72ca" },
   "inc-rename.nvim": { "branch": "main", "commit": "f9b9e5b9a75074810f40881b7e254b5bbeaf122e" },
   "lazy.nvim": { "branch": "main", "commit": "d8f26efd456190241afd1b0f5235fe6fdba13d4a" },
-  "live-server.nvim": { "branch": "main", "commit": "5fc8abb727827a09d0ce1b7757d0a4c7b5802b09" },
+  "live-server.nvim": { "branch": "main", "commit": "3547fecc984dde6de20664058b028e5e94e9bc87" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "e942edf5c85b6a2ab74059ea566cac5b3e1514a4" },
   "mason.nvim": { "branch": "main", "commit": "e2f7f9044ec30067bc11800a9e266664b88cda22" },
   "mini.icons": { "branch": "main", "commit": "910db5df9724d65371182948f921fce23c2c881e" },
