@@ -28,7 +28,7 @@ return {
 			-- dashboard.button("SPC f g", "󰊄  Live grep"),
 
 			dashboard.button("c", "  Configuration", "<cmd>Neotree "..config.."<CR>"),
-
+			dashboard.button("m", "└─   remaping", "<cmd>e "..config.."/lua/neowec/remap.lua<CR>"),
 			dashboard.button("u", "  Update plugins", "<cmd>Lazy sync<CR>"),
 			dashboard.button("q", "󰅚  Quit", "<cmd>qa<CR>"),
 		}
@@ -38,3 +38,5 @@ return {
 		)
 	end,
 }
+--├─
+--└─
