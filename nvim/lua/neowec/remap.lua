@@ -46,3 +46,13 @@ vim.keymap.set({"n"},"U","<C-r>")
 vim.keymap.set({"n","v"}, "<leader>no",vim.cmd.nohl)
 --			mass rename
 vim.keymap.set("n", "<leader>vrn", ":IncRename ")
+
+
+-- FAILED ATTEMPT TO REMAP LSP AUTOCOMPLETE CONFORMATION TO LEADER
+
+-- local cmp_select = {behavior = cmp.SelectBehavior.Select}
+-- mapping = cmp.mapping.preset.insert({
+-- local cmp = require('cmp');
+-- vim.keymap.set("i", "<leader>p",	'<C-y>')
+-- vim.keymap.set("i", "<leader>]",	'<A-]>')
+-- vim.keymap.set("i", "<leader>[",	'<A-[>')

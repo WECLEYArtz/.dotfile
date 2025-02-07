@@ -31,34 +31,24 @@ return {
 				end,
 			})
 
-
-			-- Theme
-
-			local lspconfig = require('lspconfig')
-
-
-			lspconfig.jsonls.setup({
-				filetypes = { 'json', 'jsonc' },
-				init_options = {
-					provideFormatter = true,
-				},
-			})
-
 			local cmp = require('cmp')
-			local cmp_select = {behavior = cmp.SelectBehavior.Select}
-
 			cmp.setup({
+				-- unfinished border fixing, its unhinged mess
+				window = {
+					completion = vim.tbl_extend("force", cmp.config.window.bordered(), {
+						-- border="single",
+						winhighlight = "NormalFloat:None,FloatBorder:None,CursorLine:Visual,Search:None",
+					}),
+					documentation = vim.tbl_extend("force", cmp.config.window.bordered(), {
+						border="single",
+						winhighlight = "NormalFloat:None,FloatBorder:None,CursorLine:Visual,Search:None",
+					}),
+				},
 				sources = cmp.config.sources({
 					{name = 'nvim_lsp'},
 					{name = 'luasnip'},
 				}, {
 					{name = 'buffer'},
-				}),
-				mapping = cmp.mapping.preset.insert({
-					['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-					['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-					['<C-y>'] = cmp.mapping.confirm({select = true}),
-					['<C-Space>'] = cmp.mapping.complete(),
 				}),
 				snippet = {
 					expand = function(args)
