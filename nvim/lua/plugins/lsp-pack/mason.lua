@@ -35,6 +35,7 @@ return {
 							handlers = handlers,
 						})
 					end,
+
 					lua_ls = function()
 						lspconfig.lua_ls.setup({
 							capabilities = lsp_capabilities,
