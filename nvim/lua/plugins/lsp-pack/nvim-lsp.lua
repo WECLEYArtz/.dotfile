@@ -1,17 +1,15 @@
 return
 {
-	'hrsh7th/nvim-cmp',
+	'neovim/nvim-lspconfig',
 	dependecies = {
+		"hrsh7th/nvim-cmp",
+		"hrsh7th/cmp-nvim-lsp",
+		"hrsh7th/cmp-buffer",
 		'L3MON4D3/LuaSnip',
-		'neovim/nvim-lspconfig',
-		'hrsh7th/cmp-nvim-lsp',
-		'hrsh7th/cmp-buffer',
-		'hrsh7th/cmp-path',
-		'hrsh7th/cmp-cmdline',
 	},
 	config = function()
 		-- Set up nvim-cmp.
-		local cmp = require'cmp'
+		local cmp = require('cmp')
 		local cmp_theme = vim.tbl_extend("force", cmp.config.window.bordered(), {
 			border="single",
 			winhighlight = "NormalFloat:None,FloatBorder:None,CursorLine:Visual,Search:None",
