@@ -1,9 +1,7 @@
 return {
 	'williamboman/mason-lspconfig.nvim',
 	dependencies = {
-		"neovim/nvim-lspconfig",
 		"williamboman/mason.nvim",
-		'hrsh7th/cmp-nvim-lsp',
 	},
 	config = function()
 
@@ -19,36 +17,37 @@ return {
 		}
 
 		require("mason").setup()
-		require("mason-lspconfig").setup_handlers {
-			function (server_name) -- default handler (optional)
-				require("lspconfig")[server_name].setup
-				{
-					capabilities = capabilities,
-					handlers = handlers,
-				}
-			end,
+		require("mason-lspconfig").setup{
+			handlers = {
+				function(server_name)
+					lspconfig[server_name].setup({
+						capabilities = capabilities,
+						handlers = handlers,
+					})
+				end,
 
-			lua_ls = function()
-				lspconfig.lua_ls.setup({
-					capabilities = capabilities,
-					handlers = handlers,
-					settings = {
-						Lua = {
-							runtime = {
-								version = 'LuaJIT'
-							},
-							diagnostics = {
-								globals = {'vim'},
-							},
-							workspace = {
-								library = {
-									vim.env.VIMRUNTIME,
+				lua_ls = function()
+					lspconfig.lua_ls.setup({
+						capabilities = capabilities,
+						handlers = handlers,
+						settings = {
+							Lua = {
+								runtime = {
+									version = 'LuaJIT'
+								},
+								diagnostics = {
+									globals = {'vim'},
+								},
+								workspace = {
+									library = {
+										vim.env.VIMRUNTIME,
+									}
 								}
 							}
 						}
-					}
-				})
-			end,
+					})
+				end,
+			}
 		}
 	end,
 }
