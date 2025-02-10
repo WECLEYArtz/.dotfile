@@ -2,10 +2,12 @@ return
 {
 	'neovim/nvim-lspconfig',
 	dependencies = {
-		"hrsh7th/nvim-cmp",
-		"hrsh7th/cmp-nvim-lsp",
-		"hrsh7th/cmp-buffer",
-		'L3MON4D3/LuaSnip',
+		'neovim/nvim-lspconfig',
+		'hrsh7th/cmp-nvim-lsp',
+		'hrsh7th/cmp-buffer',
+		'hrsh7th/cmp-path',
+		'hrsh7th/cmp-cmdline',
+		'hrsh7th/nvim-cmp',
 	},
 	config = function()
 		-- Set up nvim-cmp.
@@ -44,6 +46,15 @@ return
 			sources = {
 				{ name = 'buffer' }
 			}
+		})
+		cmp.setup.cmdline(':', {
+			mapping = cmp.mapping.preset.cmdline(),
+			sources = cmp.config.sources({
+				{ name = 'path' }
+			}, {
+				{ name = 'cmdline' }
+			}),
+			matching = { disallow_symbol_nonprefix_matching = false }
 		})
 	end
 }
