@@ -1,7 +1,7 @@
 return
 {
 	'neovim/nvim-lspconfig',
-	dependecies = {
+	dependencies = {
 		"hrsh7th/nvim-cmp",
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-buffer",
