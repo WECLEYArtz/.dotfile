@@ -25,3 +25,5 @@ vim.opt.clipboard = "unnamedplus"
 
 -- vim.api.nvim_command('filetype indent off')
 -- vim.opt.smartindent = false
+
+vim.opt.foldcolumn='1'
