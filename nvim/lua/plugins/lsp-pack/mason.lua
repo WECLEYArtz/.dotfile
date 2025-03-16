@@ -47,6 +47,16 @@ return {
 						}
 					})
 				end,
+				ts_ls = function()
+					require("typescript-tools").setup {
+						handlers = {
+							["textDocument/publishDiagnostics"] = require("typescript-tools.api").filter_diagnostics(
+							-- Ignore 'This may be converted to an async function' diagnostics.
+							{ 80001 }
+							),
+						},
+					}
+				end,
 			}
 		}
 	end,
