@@ -7,10 +7,7 @@ vim.keymap.set({ "n", "v" }, "i", "l", { noremap = true })
 vim.keymap.set({ "n", "v" }, "l", "i", { noremap = true })
 
 --			FILES EXPLORER
-vim.keymap.set("n", "<leader>e", function()
-	vim.cmd.Neotree("toggle=true")
-end)
-
+vim.keymap.set("n", "<leader>e", "<Cmd>Neotree toggle reveal_force_cwd<CR>")
 --			TABS
 vim.keymap.set({ "n" }, "<leader>tn", vim.cmd.tabnew)
 vim.keymap.set({ "n" }, "<leader>tc", vim.cmd.tabclose)
