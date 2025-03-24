@@ -7,19 +7,24 @@ return{
 				ensure_installed = {
 					"javascript",
 					"typescript",
+					'tsx',
 					"c",
 					"lua",
 					"vim",
 					"vimdoc",
 					"query",
 					"markdown",
-					"markdown_inline"
+					"markdown_inline",
+					'astro',
+					'html'
 				},
 				sync_install = false,
 				auto_install = true,
 				highlight = {
 					enable = true,
-					additional_vim_regex_highlighting = true
+					disable = {"astro"}
+
+					-- additional_vim_regex_highlighting = true
 				},
 				indent = {
 					enable = false,
