@@ -8,6 +8,8 @@ vim.keymap.set({ "n", "v" }, "l", "i", { noremap = true })
 
 --			FILES EXPLORER
 vim.keymap.set("n", "<leader>e", "<Cmd>Neotree toggle reveal_force_cwd<CR>")
+--			ALPHA DASH_BOARD
+vim.keymap.set("n", "<leader>ad", "<Cmd>Alpha<CR>")
 --			TABS
 vim.keymap.set({ "n" }, "<leader>tn", vim.cmd.tabnew)
 vim.keymap.set({ "n" }, "<leader>tc", vim.cmd.tabclose)
