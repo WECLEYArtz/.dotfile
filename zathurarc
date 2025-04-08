@@ -1,3 +1,4 @@
 set selection-clipboard clipboard
+set window-title-basename true
 map n scroll down
 map e scroll up
