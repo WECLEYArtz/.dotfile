@@ -17,7 +17,10 @@ return {
 			window = {
 				mappings = {
 					["="] = "toggle_auto_expand_width",
-					["e"] = "noop", -- allow motion remap to work
+					["e"] = "noop", -- allow colemak motion remap to work
+					-- ["<leader>o"] = "sort",
+					-- ["o"] = "open",
+					-- ["<leader><leader>"] = "open",
 					["P"] = {
 						"toggle_preview",
 						config = {
