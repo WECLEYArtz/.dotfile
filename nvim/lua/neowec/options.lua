@@ -3,7 +3,7 @@ vim.opt.relativenumber = true
 
 vim.opt.scrolloff = 10
 
-vim.opt.updatetime = 50 -- what does this even do?
+vim.opt.updatetime = 1000
 vim.opt.colorcolumn = "80" -- what does this even do?
 
 vim.opt.splitbelow = true
@@ -25,3 +25,8 @@ vim.opt.clipboard = "unnamedplus"
 
 vim.opt.foldcolumn = "1"
 -- vim.opt.winborder = "single"
+vim.api.nvim_create_autocmd("TextYankPost", {
+	callback = function()
+		vim.highlight.on_yank({ higroup = "Visual" })
+	end,
+})

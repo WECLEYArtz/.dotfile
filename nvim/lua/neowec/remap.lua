@@ -32,7 +32,10 @@ vim.keymap.set({ "n", "v", "i" }, "<leader>x", "<ESC>")
 --			BETTER UNDO
 vim.keymap.set({ "n" }, "U", "<C-r>")
 --			BETTER WRITE
-vim.keymap.set({ "n" }, "U", "<C-r>")
+vim.keymap.set({ "n", "v" }, "<leader>ww", vim.cmd.write)
+--			BETTER QUIT
+vim.keymap.set({ "n", "v" }, "<leader>qq", vim.cmd.quit)
+vim.keymap.set({ "n", "v" }, "<leader>ql", vim.cmd.qall)
 --			NO HIGHLIGHT
 vim.keymap.set({ "n", "v" }, "<leader>no", vim.cmd.nohl)
 
