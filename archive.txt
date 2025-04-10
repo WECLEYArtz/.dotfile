@@ -37,3 +37,7 @@ SMLINK=	/home/wec/.config/BraveSoftware/Brave-Browser/Default
 TARGET=	/home/wec/.dotphile/compton.conf
 SMLINK=	/home/wec/.config/compton.conf
 
+[ vimrc ]
+TARGET=	/home/wec/.dotphile/vimrc
+SMLINK=	/home/wec/.vim/vimrc
+
