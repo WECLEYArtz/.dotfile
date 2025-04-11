@@ -1,10 +1,36 @@
 vim.g.mapleader = " "
 
 --			COLEMAK BETTER MOTION
-vim.keymap.set({ "n", "v" }, "n", "j", { noremap = true })
-vim.keymap.set({ "n", "v" }, "e", "k", { noremap = true })
-vim.keymap.set({ "n", "v" }, "i", "l", { noremap = true })
-vim.keymap.set({ "n", "v" }, "l", "i", { noremap = true })
+vim.g.Arrows = false
+function ArrowsToggle(arg)
+	if arg ~= nil and (type(arg) == "boolean") and (arg == vim.g.Arrows) then
+		return
+	end
+
+	if not vim.g.Arrows then
+		vim.keymap.set({ "n", "v" }, "n", "<Down>", { noremap = true })
+		vim.keymap.set({ "n", "v" }, "e", "<Up>", { noremap = true })
+		vim.keymap.set({ "n", "v" }, "i", "<Right>", { noremap = true })
+		vim.opt.cursorline = false
+	else
+		vim.keymap.del({ "n", "v" }, "n")
+		vim.keymap.del({ "n", "v" }, "e")
+		vim.keymap.del({ "n", "v" }, "i")
+		vim.opt.cursorline = true
+	end
+
+	vim.g.Arrows = not vim.g.Arrows
+	vim.print("Arrows " .. tostring(vim.g.Arrows))
+end
+
+vim.api.nvim_create_autocmd("BufEnter", {
+	callback = function()
+		vim.keymap.set({ "n", "v" }, "<leader>.", function()
+			ArrowsToggle()
+		end, { noremap = true, silent = true })
+	end,
+})
+ArrowsToggle() -- Toggle arrows to true;
 
 --			FILES EXPLORER
 vim.keymap.set("n", "<leader>e", "<Cmd>Neotree reveal_force_cwd<CR>")
@@ -38,6 +64,3 @@ vim.keymap.set({ "n", "v" }, "<leader>qq", vim.cmd.quit)
 vim.keymap.set({ "n", "v" }, "<leader>ql", vim.cmd.qall)
 --			NO HIGHLIGHT
 vim.keymap.set({ "n", "v" }, "<leader>no", vim.cmd.nohl)
-
---			mass rename (not working )
-vim.keymap.set("n", "<leader>vrn", ":IncRename ")

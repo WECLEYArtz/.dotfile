@@ -1,34 +1,42 @@
 let mapleader = " "
-let g:Arrows=1
+let g:Arrows=v:false
 
-function! ArrowsToggle(par)
-	if g:Arrows || a:par
+function! ArrowsToggle(...)
+	if (a:0 && (type(a:1)==6) && (a:1 == g:Arrows))
+		return
+	endif
+	if !g:Arrows
 		nnoremap n <Down>
 		vnoremap n <Down>
+
 		nnoremap e <Up>
 		vnoremap e <Up>
+
 		nnoremap i <Right>
 		vnoremap i <Right>
-		let g:Arrows=0
-		echo "Arrows ON"
+
+		set nocursorline
 	else
 		nunmap n
 		vunmap n
+
 		nunmap e
 		vunmap e
+
 		nunmap i
 		vunmap i
 
-		let g:Arrows=1
-		echo "Arrows OFF"
+		set cursorline
 	endif
+	let g:Arrows=!g:Arrows 
 endfunction
+call ArrowsToggle() "Toggle arrows to true;
 
 noremap  <leader>. :call ArrowsToggle()<cr>
 nnoremap U <C-r>
 
-noremap <leader>x <ESC> | :call ArrowsToggle(1)
-inoremap <leader>x <ESC> | :call ArrowsToggle(1)
+noremap <leader>x <ESC>:call ArrowsToggle(v:true)<cr>
+inoremap <leader>x <ESC>
 
 nnoremap <leader>e :Ex<CR>
 nnoremap <leader>no :nohl<CR>
@@ -36,7 +44,6 @@ nnoremap <leader>q :q<CR>
 nnoremap <leader>w :w<CR>
 
 
-call ArrowsToggle(1)
 
 set rnu
 set termguicolors       " Enable true color
