@@ -22,7 +22,8 @@ return {
 				mappings = {
 					["="] = "toggle_auto_expand_width",
 					["e"] = "noop", -- allow colemak motion remap to work
-					["<leader>"] = "open",
+					["<space>"] = "noop", -- allow leader to work as toggle_node, still dont understand how it exactly works
+					["<leader>"] = "toggle_node",
 					["P"] = {
 						"toggle_preview",
 						config = {
