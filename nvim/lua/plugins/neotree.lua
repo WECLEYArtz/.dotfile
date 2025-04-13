@@ -14,13 +14,15 @@ return {
 					enable = true,
 				},
 			},
+			mapping_options = {
+				noremap = true,
+				nowait = true,
+			},
 			window = {
 				mappings = {
 					["="] = "toggle_auto_expand_width",
 					["e"] = "noop", -- allow colemak motion remap to work
-					-- ["<leader>o"] = "sort",
-					-- ["o"] = "open",
-					-- ["<leader><leader>"] = "open",
+					["<leader>"] = "open",
 					["P"] = {
 						"toggle_preview",
 						config = {
