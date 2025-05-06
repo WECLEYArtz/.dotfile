@@ -25,11 +25,16 @@ return {
 		-- -- available: devicons, mini, default is mini
 		-- -- if provider not loaded and enabled is true, it will try to use another provider
 		theta.file_icons.provider = "devicons"
+		-- this doesnt work
+		dashboard.section.header.val = {
+			[[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
+			[[ / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
+			[[/\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ]],
+			[[\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
+			[[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
+		}
 		theta.buttons.val = {
 			dashboard.button("o", "  New file", "<cmd>ene<CR>"),
-			-- dashboard.button("SPC f f", "󰈞  Find file"),
-			-- dashboard.button("SPC f g", "󰊄  Live grep"),
-
 			dashboard.button("c", "  Configuration", function()
 				if path_old == "" then
 					if vf.getcwd() == config then
@@ -55,6 +60,12 @@ return {
 			theta.config
 			-- dashboard.config
 		)
+		vim.api.nvim_create_autocmd({ "FileType" }, {
+			pattern = { "alpha" },
+			callback = function()
+				vim.keymap.set({}, "<Space>", "<cr>", { buffer = true, silent = true })
+			end,
+		})
 	end,
 }
 --├─

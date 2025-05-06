@@ -1,6 +1,7 @@
 let mapleader = " "
 let g:Arrows=v:false
 
+"	ARROW TOGGLE FUNCTION
 function! ArrowsToggle(...)
 	if (a:0 && (type(a:1)==6) && (a:1 == g:Arrows))
 		return
@@ -32,16 +33,34 @@ function! ArrowsToggle(...)
 endfunction
 call ArrowsToggle() "Toggle arrows to true;
 
-noremap  <leader>. :call ArrowsToggle()<cr>
+"	TOGGLE ARROWS
+noremap  <leader>. <cmd>call ArrowsToggle()<cr>
+
+"	BETTER UNDO
 nnoremap U <C-r>
 
-noremap <leader>x <ESC>:call ArrowsToggle(v:true)<cr>
+"	BETTER ESCAPE
+noremap <leader>x <ESC><cmd>call ArrowsToggle(v:true)<cr>
 inoremap <leader>x <ESC>
 
-nnoremap <leader>e :Ex<CR>
-nnoremap <leader>no :nohl<CR>
-nnoremap <leader>q :q<CR>
-nnoremap <leader>w :w<CR>
+"	BETTER EXPLORER
+nnoremap <leader>e <cmd>Ex<CR>
+autocmd  FileType netrw nnoremap <buffer> <leader>e <cmd>bd<cr>
+
+"	NO HIGHLIGHT
+nnoremap <leader>no <cmd>nohl<CR>
+
+
+"	BETTER QUITE AND REWRITE
+nnoremap <leader>q <cmd>q<CR>
+nnoremap <leader>w <cmd>w<CR>
+
+
+" TABS
+nnoremap <leader>tn <cmd>tabnew<CR>
+nnoremap <leader>tx <cmd>tabclose<CR>
+nnoremap <leader>ti <cmd>tabnext<CR>
+nnoremap <leader>th <cmd>tabprevious<CR>
 
 
 

@@ -125,6 +125,7 @@ export MC=/home/wec/.local/share/atlauncher/instances
 
 alias pool='~/pool/pool.sh'
 alias mini='~/mini-moulinette/mini-moul.sh'
+alias cstm-lock='~/i3lock.sh'
 
 # setxkbmap -option caps:backspace
 

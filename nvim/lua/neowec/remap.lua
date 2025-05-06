@@ -37,7 +37,7 @@ vim.keymap.set("n", "<leader>e", "<Cmd>Neotree reveal_force_cwd<CR>")
 vim.keymap.set("n", "<leader>ad", "<Cmd>Alpha<CR>")
 --			TABS
 vim.keymap.set({ "n" }, "<leader>tn", vim.cmd.tabnew)
-vim.keymap.set({ "n" }, "<leader>tc", vim.cmd.tabclose)
+vim.keymap.set({ "n" }, "<leader>tx", vim.cmd.tabclose)
 vim.keymap.set({ "n" }, "<leader>ti", vim.cmd.tabnext)
 vim.keymap.set({ "n" }, "<leader>th", vim.cmd.tabprevious)
 
@@ -53,18 +53,15 @@ vim.keymap.set("n", "<leader>sv", vim.cmd.vsplit)
 vim.keymap.set("n", "<leader>sh", vim.cmd.split)
 
 --			BETTER ESCAPE
-vim.keymap.set({ "n", "v", "i" }, "<leader>x", "<ESC>")
+vim.keymap.set({ "n", "v", "i" }, "<leader>x", "<Esc>:lua ArrowsToggle(true)<CR>")
 --			BETTER UNDO
 vim.keymap.set("n", "U", "<C-r>")
 
 --			BETTER WRITE
 vim.keymap.set("n", "<leader>ww", vim.cmd.write)
 --			BETTER QUIT
-vim.keymap.set("n", "<leader>qq", vim.cmd.quit)
-vim.keymap.set("n", "<leader>ql", vim.cmd.quitall)
-vim.keymap.set("n", "<leader>qfc", function()
-	vim.cmd("q!")
-end)
+vim.keymap.set("n", "<leader>q", vim.cmd.quit)
+vim.keymap.set("n", "<leader>Q", vim.cmd.quitall)
 
 --			NO HIGHLIGHT
 vim.keymap.set("n", "<leader>no", vim.cmd.nohl)

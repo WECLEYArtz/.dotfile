@@ -6,4 +6,4 @@ alias conxbox='sudo xboxdrv --silent'
 alias nv='nvim'
 
 alias dotin='bash doting.sh'
-alias mountsd='sudo mount /dev/sda2 /media/wec/SD'
+alias mountsd='sudo mount --verbose /dev/sda2 /media/wec/SD'

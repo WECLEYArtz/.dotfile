@@ -41,3 +41,7 @@ SMLINK=	/home/wec/.config/compton.conf
 TARGET=	/home/wec/.dotphile/vimrc
 SMLINK=	/home/wec/.vim/vimrc
 
+[ i3lock.sh ]
+TARGET=	/home/wec/.dotphile/i3lock.sh
+SMLINK=	/home/wec/i3lock.sh
+
