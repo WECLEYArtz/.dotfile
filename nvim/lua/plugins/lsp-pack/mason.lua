@@ -9,21 +9,21 @@ return {
 		}
 
 		local lspconfig = require("lspconfig")
-		local capabilities = require("cmp_nvim_lsp").default_capabilities()
+		-- local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 		require("mason").setup()
 		require("mason-lspconfig").setup({
 			handlers = {
 				function(server_name)
 					lspconfig[server_name].setup({
-						capabilities = capabilities,
+						-- capabilities = capabilities,
 						handlers = handlers,
 					})
 				end,
 
 				lua_ls = function()
 					lspconfig.lua_ls.setup({
-						capabilities = capabilities,
+						-- capabilities = capabilities,
 						handlers = handlers,
 						settings = {
 							Lua = {

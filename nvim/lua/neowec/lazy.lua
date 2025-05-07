@@ -22,6 +22,16 @@ require("lazy").setup({
 		{ import = "plugins/lsp-pack" },
 		{ import = "plugins/themeing-pack" },
 	},
+
+	news = {
+		lazyvim = true,
+		neovim = true,
+	},
+
 	ui = { border = "single" },
-	checker = { notify = false },
+
+	checker = {
+		enabled = false,
+		notify = false,
+	},
 })
