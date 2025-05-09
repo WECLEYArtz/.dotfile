@@ -36,7 +36,7 @@ vim.keymap.set("n", "<leader>e", "<Cmd>Neotree reveal_force_cwd<CR>")
 --			ALPHA DASH_BOARD
 vim.keymap.set("n", "<leader>ad", "<Cmd>Alpha<CR>")
 --			TABS
-vim.keymap.set({ "n" }, "<leader>tn", vim.cmd.tabnew)
+vim.keymap.set({ "n" }, "<leader>nt", vim.cmd.tabnew)
 vim.keymap.set({ "n" }, "<leader>tx", vim.cmd.tabclose)
 vim.keymap.set({ "n" }, "<leader>ti", vim.cmd.tabnext)
 vim.keymap.set({ "n" }, "<leader>th", vim.cmd.tabprevious)
@@ -46,6 +46,15 @@ vim.keymap.set("n", "<leader>wn", "<C-W>j")
 vim.keymap.set("n", "<leader>we", "<C-W>k")
 vim.keymap.set("n", "<leader>wi", "<C-W>l")
 vim.keymap.set("n", "<leader>wh", "<C-W>h")
+vim.keymap.set("n", "<leader>wo", vim.cmd.only)
+
+--			new WINDOWS MOTION
+vim.keymap.set("n", "<leader>wt", "<C-W>T") --move window to new tab, damn so good.
+vim.keymap.set("n", "<leader>nw", "<C-W><C-N>")
+vim.keymap.set("n", "<leader>wN", "<C-W>J")
+vim.keymap.set("n", "<leader>wE", "<C-W>K")
+vim.keymap.set("n", "<leader>wI", "<C-W>L")
+vim.keymap.set("n", "<leader>wH", "<C-W>H")
 vim.keymap.set("n", "<leader>wo", vim.cmd.only)
 
 --			SPLIT

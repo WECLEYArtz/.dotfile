@@ -45,3 +45,7 @@ SMLINK=	/home/wec/.vim/vimrc
 TARGET=	/home/wec/.dotphile/i3lock.sh
 SMLINK=	/home/wec/i3lock.sh
 
+[ config ]
+TARGET=	/home/wec/.dotphile/config
+SMLINK=	/home/wec/.config/i3/config
+

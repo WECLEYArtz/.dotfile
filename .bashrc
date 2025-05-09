@@ -122,6 +122,8 @@ export MTP=~/mnt
 export NVCONF=/home/wec/.config/nvim
 export EDITOR=/usr/bin/nvim
 export MC=/home/wec/.local/share/atlauncher/instances
+export VISUAL=/usr/bin/nvim
+export SUDO_EDITOR=/usr/bin/nvim
 
 alias pool='~/pool/pool.sh'
 alias mini='~/mini-moulinette/mini-moul.sh'
