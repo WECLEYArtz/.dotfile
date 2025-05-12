@@ -5,6 +5,7 @@ return {
 		local conform = require("conform")
 		conform.setup({
 			formatters_by_ft = {
+				cpp = { "clang-format" },
 				lua = { "stylua" },
 				-- python = { "isort", "black" },
 				-- rust = { "rustfmt", lsp_format = "fallback" },
@@ -28,6 +29,3 @@ return {
 		})
 	end,
 }
--- ~/.local/share/nvim/mason/bin/prettier --plugin ~/.local/share/nvim/mason/packages/prettier/node_modules/prettier-plugin-astro --stdin-filepath src/pages/about.astro
--- ~/.local/share/nvim/mason/bin/prettier --find-config-path --check ~/projects/coding/portfolio/warmup/src/pages/about.astro
--- ~/.local/share/nvim/mason/bin/prettier --config ~/projects/coding/portfolio/warmup/prettierrc.mjs --check ~/projects/coding/portfolio/warmup/src/pages/about.astro

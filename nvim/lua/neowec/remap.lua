@@ -37,9 +37,9 @@ vim.keymap.set("n", "<leader>e", "<Cmd>Neotree reveal_force_cwd<CR>")
 vim.keymap.set("n", "<leader>ad", "<Cmd>Alpha<CR>")
 --			TABS
 vim.keymap.set({ "n" }, "<leader>nt", vim.cmd.tabnew)
-vim.keymap.set({ "n" }, "<leader>tx", vim.cmd.tabclose)
-vim.keymap.set({ "n" }, "<leader>ti", vim.cmd.tabnext)
-vim.keymap.set({ "n" }, "<leader>th", vim.cmd.tabprevious)
+vim.keymap.set({ "n" }, "<leader>xt", vim.cmd.tabclose)
+vim.keymap.set({ "n" }, "<leader>t", vim.cmd.tabnext)
+vim.keymap.set({ "n" }, "<leader>T", vim.cmd.tabprevious)
 
 --			WINDOWS MOTION
 vim.keymap.set("n", "<leader>wn", "<C-W>j")

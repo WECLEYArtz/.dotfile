@@ -16,7 +16,7 @@ vim.opt.shiftwidth = 4
 vim.opt.ignorecase = true -- easier search
 vim.opt.formatoptions:remove({ "t", "c", "r", "o" })
 
--- vim.opt.termguicolors = true
+vim.opt.termguicolors = true
 
 vim.opt.clipboard = "unnamedplus"
 
