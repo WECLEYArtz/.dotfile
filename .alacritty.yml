@@ -1,0 +1,95 @@
+# Alacritty Configuration
+
+window:
+  opacity: 0.9
+  decorations: full
+  dynamic_padding: true
+  dynamic_title: true
+  # Optional: remove background completely when unfocused
+  blur: true   # uncomment if using a compositor that supports it
+
+font:
+  normal:
+    # family: "DejaVu Sans Mono"
+    family: "monospace"
+  size: 9.0
+
+# Optional: make sure transparency works (requires compositor like picom on Linux)
+window_opacity: 0.9
+
+# offset:
+#   x: 0  # Horizontal font offset (can tweak spacing if needed)
+#   y: 0  # Vertical font offset
+
+#   glyph_offset:
+#     x: 0  # Positioning offset for glyph rendering
+#     y: 0
+
+# # Makes bold text appear brighter (common preference in terminal themes)
+# draw_bold_text_with_bright_colors: true
+
+
+colors:
+  # Default colors
+  primary:
+    background: '#000000'
+    foreground: '#aaaaaa'
+
+  # Selection colors
+  selection:
+    text:       '#000000'
+    background: '#b4d5ff'
+
+  # Cursor colors
+  cursor:
+    text:       '#111111'
+    cursor:     '#aaaaaa'
+
+  # Normal colors
+  normal:
+    black:   '#1e1e1e'  # color0
+    red:     '#c01c28'  # color1
+    green:   '#26a269'  # color2
+    yellow:  '#a2734c'  # color3
+    blue:    '#12488b'  # color4
+    magenta: '#a347ba'  # color5
+    cyan:    '#2aa1b3'  # color6
+    white:   '#cfcfcf'  # color7
+
+  # Bright colors
+  bright:
+    black:   '#5d5d5d'  # color8
+    red:     '#f66151'  # color9
+    green:   '#33d17a'  # color10
+    yellow:  '#e9ad0c'  # color11
+    blue:    '#2a7bde'  # color12
+    magenta: '#c061cb'  # color13
+    cyan:    '#33c7de'  # color14
+    white:   '#ffffff'  # color15
+
+  # Optional: add visual bell or search highlight colors here if desired
+
+cursor:
+  
+  style:
+    shape: Beam      # Block-style cursor (can change to Underline or Beam)
+    blinking: On      # Make the cursor blink (can help with visibility)
+
+# # Performance tuning options
+
+# # Disable render time display (useful only for debugging)
+render_timer: false
+
+# # Turn off persistent logging to avoid excessive disk I/O
+persistent_logging: false
+
+# # Set the verbosity of logs
+log_level: Warn
+
+debug:
+  render_timer: false  # Do not display render performance metrics
+
+# # Environment variables passed to the terminal
+
+env:
+  TERM: xterm-256color  # Identify terminal type to programs (256-color support)
