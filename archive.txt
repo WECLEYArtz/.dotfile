@@ -53,7 +53,7 @@ SMLINK=	/home/wec/.config/i3
 TARGET=	/home/wec/.dotphile/polybar
 SMLINK=	/home/wec/.config/polybar
 
-[ .alacritty.yml ]
-TARGET=	/home/wec/.dotphile/.alacritty.yml
-SMLINK=	/home/wec/.alacritty.yml
+[ .alacritty.toml ]
+TARGET=	/home/wec/.dotphile/.alacritty.toml
+SMLINK=	/home/wec/.alacritty.toml
 
