@@ -57,3 +57,7 @@ SMLINK=	/home/wec/.config/polybar
 TARGET=	/home/wec/.dotphile/.alacritty.toml
 SMLINK=	/home/wec/.alacritty.toml
 
+[ picom.conf ]
+TARGET=	/home/wec/.dotphile/picom.conf
+SMLINK=	/home/wec/.config/picom/picom.conf
+
