@@ -35,12 +35,16 @@ ArrowsToggle() -- Toggle arrows to true;
 vim.keymap.set("n", "<leader>e", "<Cmd>Neotree reveal_force_cwd<CR>")
 --			ALPHA DASH_BOARD
 vim.keymap.set("n", "<leader>ad", "<Cmd>Alpha<CR>")
---			TABS
-vim.keymap.set({ "n" }, "<leader>nt", vim.cmd.tabnew)
-vim.keymap.set({ "n" }, "<leader>xt", vim.cmd.tabclose)
-vim.keymap.set({ "n" }, "<leader>t", vim.cmd.tabnext)
-vim.keymap.set({ "n" }, "<leader>T", vim.cmd.tabprevious)
+--			TABS (abandoned in favor of BUFFERS)
+-- vim.keymap.set({ "n" }, "<leader>nt", vim.cmd.tabnew)
+-- vim.keymap.set({ "n" }, "<leader>xt", vim.cmd.tabclose)
+-- vim.keymap.set({ "n" }, "<leader>t", vim.cmd.tabnext)
+-- vim.keymap.set({ "n" }, "<leader>T", vim.cmd.tabprevious)
 
+--			BUFFERS
+vim.keymap.set({ "n" }, "<leader>b", vim.cmd.bnext)
+vim.keymap.set({ "n" }, "<leader>B", vim.cmd.bprevious)
+vim.keymap.set({ "n" }, "<leader>db", vim.cmd.bd)
 --			WINDOWS MOTION
 vim.keymap.set("n", "<leader>wn", "<C-W>j")
 vim.keymap.set("n", "<leader>we", "<C-W>k")

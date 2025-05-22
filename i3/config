@@ -62,7 +62,7 @@ gaps inner 5
 # exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
+# set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +7%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 7%-
 
@@ -160,16 +160,6 @@ set $ws9 "9"
 set $ws10 "10"
 
 # switch to workspace
-#
-# bindcode 87 workspace number $ws1
-# bindcode 88 workspace number $ws2
-# bindcode 89 workspace number $ws3
-# bindcode 83 workspace number $ws4
-# bindcode 84 workspace number $ws5
-# bindcode 85 workspace number $ws6
-# bindcode 79 workspace number $ws7
-# bindcode 80 workspace number $ws8
-# bindcode 81 workspace number $ws9
 
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
@@ -230,3 +220,7 @@ bindsym $mod+p mode "resize"
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+
+# steam child windows flaoating fixes
+for_window [class="Steam"] floating enable
+for_window [class="Steam" title="^Steam$"] floating disable
