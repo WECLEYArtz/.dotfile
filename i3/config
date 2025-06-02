@@ -84,8 +84,10 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+k kill
 # bindsym $mod+k kill
 
-# start dmenu (a program launcher)
+# start dmenu (rofi) (a program launcher)
 bindcode $mod+61 exec rofi -show drun -show-icons
+# xfce screenshoter
+bindsym Print exec xfce4-screenshoter
 # bindcode $mod+61 exec xfce4-appfinder 
 
 # A more modern dmenu replacement is rofi:

@@ -1,13 +1,30 @@
-return{
+return {
 	{
 		"nvim-telescope/telescope.nvim",
 		config = function()
-			local builtin = require('telescope.builtin')
+			local builtin = require("telescope.builtin")
 
-			vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
-			vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
-			vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
-			vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
-		end
+			vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
+			vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
+			vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
+			vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
+		end,
 	},
+	require("telescope").setup({
+		defaults = {
+			mappings = {
+				n = {
+					-- Colemak change
+					["n"] = require("telescope.actions").move_selection_next,
+					["d"] = require("telescope.actions").delete_buffer,
+					["e"] = require("telescope.actions").move_selection_previous,
+				},
+			},
+		},
+		pickers = {
+			buffers = {
+				initial_mode = "normal",
+			},
+		},
+	}),
 }

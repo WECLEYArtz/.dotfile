@@ -31,3 +31,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank({ higroup = "Visual" })
 	end,
 })
+vim.diagnostic.config({
+	virtual_lines = true,
+})
