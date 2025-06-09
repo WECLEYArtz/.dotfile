@@ -41,10 +41,10 @@ vim.keymap.set("n", "<leader>ad", "<Cmd>Alpha<CR>")
 -- vim.keymap.set({ "n" }, "<leader>t", vim.cmd.tabnext)
 -- vim.keymap.set({ "n" }, "<leader>T", vim.cmd.tabprevious)
 
---			BUFFERS
-vim.keymap.set({ "n" }, "<leader>b", vim.cmd.bnext)
-vim.keymap.set({ "n" }, "<leader>B", vim.cmd.bprevious)
-vim.keymap.set({ "n" }, "<leader>db", vim.cmd.bd)
+----			BUFFERS (actually fuck this, we telescoping)
+--vim.keymap.set({ "n" }, "<leader>b", vim.cmd.bnext)
+--vim.keymap.set({ "n" }, "<leader>B", vim.cmd.bprevious)
+--vim.keymap.set({ "n" }, "<leader>db", vim.cmd.bd)
 --			WINDOWS MOTION
 vim.keymap.set("n", "<leader>wn", "<C-W>j")
 vim.keymap.set("n", "<leader>we", "<C-W>k")

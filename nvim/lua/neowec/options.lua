@@ -24,7 +24,7 @@ vim.opt.clipboard = "unnamedplus"
 -- vim.opt.smartindent = false
 
 vim.opt.foldcolumn = "1"
-vim.opt.winborder = single
+-- vim.opt.winborder = "single"
 
 vim.api.nvim_create_autocmd("TextYankPost", {
 	callback = function()

@@ -13,13 +13,15 @@ set $mod Mod1
 
 # remap AltGr to Alt_L
 exec_always --no-startup-id redshift -t 5500:3700
-exec_always --no-startup-id xmodmap -e 'keycode 108 = Alt_L'
 # faster rpeat key, This one has to be global..
 exec_always --no-startup-id xset r rate 250 25
 exec_always --no-startup-id autotiling
 exec_always --no-startup-id picom -b --config ~/.config/picom/picom.conf
 exec_always --no-startup-id feh --bg-fill .themes/.Backgrounds/Ice.png
 
+exec --no-startup-id setxkbmap -layout us,us -variant colemak, -option grp:ctrl_space_toggle -option caps:backspace
+# exec --no-startup-id setxkbmap -layout us,colemak
+exec_always --no-startup-id xmodmap -e 'keycode 108 = Alt_L'
 
 # incase shit didnt work on another keyboard, run:
 # xmodmap -e 'keycode 108 = Alt_L' && xset r rate 250 25
@@ -31,12 +33,18 @@ exec_always --no-startup-id feh --bg-fill .themes/.Backgrounds/Ice.png
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 font pango:Terminus 11px
 
-# class                 border  backgr. text    indicator child_border
-client.focused          #285577 #1d8de2 #000a1b #2e9ef4   #285577
-client.focused_inactive #111d21 #204560 #abcdef #484e50   #5f676a
-client.unfocused        #204560 #111d21 #abcdef #292d2e   #222222
-client.urgent           #9A0612 #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+# # class                 border  backgr. text    indicator child_border
+# client.focused          #285577 #1d8de2 #000a1b #2e9ef4   #285577
+# client.focused_inactive #111d21 #101B2E #abcdef #484e50   #5f676a
+# client.unfocused        #204560 #111d21 #abcdef #292d2e   #222222
+# client.urgent           #9A0612 #900000 #ffffff #900000   #900000
+# client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.focused          #115887 #18385C #FFFFFF #01F4F3   #285577
+client.focused_inactive #333333 #15243D #ADADAD #484E50   #5F676A
+client.unfocused        #333333 #111322 #ADADAD #292D2E   #222222
+client.urgent           #2F343A #900000 #FFFFFF #900000   #900000
+client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 
 client.background       #ffffff
 # title_align center
