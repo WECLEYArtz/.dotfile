@@ -78,3 +78,5 @@ vim.keymap.set("n", "<leader>Q", vim.cmd.quitall)
 
 --			NO HIGHLIGHT
 vim.keymap.set("n", "<leader>no", vim.cmd.nohl)
+--			UNDOTREE
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)

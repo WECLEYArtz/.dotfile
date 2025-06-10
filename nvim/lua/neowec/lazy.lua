@@ -22,6 +22,9 @@ require("lazy").setup({
 		{ import = "plugins/lsp-pack" },
 		{ import = "plugins/themeing-pack" },
 	},
-	ui = { border = "single" },
+	ui = {
+		border = "single",
+		backdrop = 0,
+	},
 	checker = { notify = false },
 })

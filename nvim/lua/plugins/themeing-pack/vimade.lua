@@ -2,7 +2,16 @@ return {
 	"TaDaa/vimade",
 	config = function()
 		require("vimade").setup({
-			tint = {},
+			blocklist = {
+				neotree = {
+					buf_opts = {
+						filetype = {
+							"neo-tree",
+							"undotree",
+						},
+					},
+				},
+			},
 		})
 	end,
 }
