@@ -1,5 +1,4 @@
 vim.cmd("colorscheme carbonfox")
-vim.cmd("AirlineTheme simple")
 
 local dark = "#020202"
 -- local nc = "#0a0a0a"
