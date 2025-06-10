@@ -24,6 +24,10 @@ return {
 		pickers = {
 			buffers = {
 				initial_mode = "normal",
+				sort_lastused = true,
+				sort_mru = true,
+				show_all_buffers = false,
+				-- ignore_current_buffer = true,
 			},
 		},
 	}),
