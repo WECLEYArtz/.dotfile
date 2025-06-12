@@ -11,9 +11,11 @@
 
 # steam child windows floating fixes
 
+for_window [window_role="pop-up"] floating enable
 for_window [class="KeePassXC"] floating enable
 for_window [class="steam"] floating enable
 for_window [class="steam" title="^Steam$"] floating disable
+
 # for_window [class="steam" title="^Steam$"] floating disable
 
 set $mod Mod1
@@ -40,23 +42,27 @@ exec_always --no-startup-id xmodmap -e 'keycode 108 = Alt_L'
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 font pango:Terminus 11px
 
-# # class                 border  backgr. text    indicator child_border
-# client.focused          #285577 #1d8de2 #000a1b #2e9ef4   #285577
-# client.focused_inactive #111d21 #101B2E #abcdef #484e50   #5f676a
-# client.unfocused        #204560 #111d21 #abcdef #292d2e   #222222
-# client.urgent           #9A0612 #900000 #ffffff #900000   #900000
-# client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
-client.focused          #115887 #18385C #FFFFFF #01F4F3   #285577
-client.focused_inactive #333333 #15243D #ADADAD #484E50   #5F676A
-client.unfocused        #333333 #111322 #ADADAD #292D2E   #222222
-client.urgent           #2F343A #900000 #FFFFFF #900000   #900000
+# client.focused          #115887 #18385C #FFFFFF #01F4F3   #285577
+# client.focused_inactive #333333 #15243D #ADADAD #484E50   #5F676A
+# client.unfocused        #333333 #111322 #ADADAD #292D2E   #222222
+# client.urgent           #2F343A #900000 #FFFFFF #900000   #900000
+# client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
+
+client.focused          #4A7595 #080D13 #37B0FF #2E9EF4   #285577
+client.focused_inactive #395B74 #000101 #555C62 #484E50   #5F676A
+client.unfocused        #101010 #000000 #555C62 #292D2E   #222222
+client.urgent           #101010 #1C0909 #FF0000 #900000   #900000
 client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 
 client.background       #ffffff
 # title_align center
 
+default_floating_border pixel 0
+for_window [class="^.*"] border pixel 1
+hide_edge_borders vertical
 gaps inner 5
+# gaps outer 5
 # gaps outer current plus 5
 # gaps horizontal current plus 40
 # gaps outer current toggle 60
@@ -102,8 +108,11 @@ bindsym $mod+k kill
 # start dmenu (rofi) (a program launcher)
 bindcode $mod+61 exec rofi -show drun -show-icons
 # xfce screenshoter
+
 bindsym Print exec xfce4-screenshoter
-# bindcode $mod+61 exec xfce4-appfinder 
+# file manager (considering...)
+# bindsym $mod+shift+f exec thunar
+
 
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
