@@ -22,6 +22,8 @@ for_window [class="steam" title="^Steam$"] floating disable
 
 set $mod Mod1
 
+# 
+exec i3 --shmlog-size=26214400
 # remap AltGr to Alt_L
 exec_always --no-startup-id redshift -t 5500:3700
 # faster rpeat key, This one has to be global..
@@ -104,6 +106,9 @@ tiling_drag modifier titlebar
 
 # start a terminal
 bindsym $mod+Return exec alacritty
+# start a terminal with current working-directory
+bindsym $mod+shift+Return exec alacritty --working-directory "`xcwd`"
+# bindsym $mod+shift+Return exec pwd | cb ; exec vb | xargs alacritty --working-directory
 
 # kill focused window
 bindsym $mod+k kill
