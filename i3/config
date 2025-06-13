@@ -12,9 +12,11 @@
 # steam child windows floating fixes
 
 for_window [window_role="pop-up"] floating enable
+for_window [title="^Event Tester$"] floating enable
 for_window [class="KeePassXC"] floating enable
 for_window [class="steam"] floating enable
 for_window [class="steam" title="^Steam$"] floating disable
+
 
 # for_window [class="steam" title="^Steam$"] floating disable
 
@@ -27,6 +29,8 @@ exec_always --no-startup-id xset r rate 250 25
 exec_always --no-startup-id autotiling
 exec_always --no-startup-id picom -b --config ~/.config/picom/picom.conf
 exec_always --no-startup-id feh --bg-fill .themes/.Backgrounds/Ice.png
+exec_always --no-startup-id xfce4-clipman
+
 
 exec --no-startup-id setxkbmap -layout us,us -variant colemak, -option grp:ctrl_space_toggle -option caps:backspace
 # exec --no-startup-id setxkbmap -layout us,colemak
@@ -59,7 +63,7 @@ client.background       #ffffff
 # title_align center
 
 default_floating_border pixel 0
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 2
 hide_edge_borders vertical
 gaps inner 5
 # gaps outer 5
