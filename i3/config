@@ -34,7 +34,7 @@ exec_always --no-startup-id feh --bg-fill .themes/.Backgrounds/Ice.png
 exec_always --no-startup-id xfce4-clipman
 
 
-exec --no-startup-id setxkbmap -layout us,us -variant colemak, -option grp:ctrl_space_toggle -option caps:backspace
+exec --no-startup-id setxkbmap -layout us,us -variant colemak, -option grp:win_space_toggle -option caps:backspace
 # exec --no-startup-id setxkbmap -layout us,colemak
 exec_always --no-startup-id xmodmap -e 'keycode 108 = Alt_L'
 

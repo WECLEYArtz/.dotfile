@@ -12,6 +12,8 @@ vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
 
 -- per-group backgound:
 vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = dark })
+vim.api.nvim_set_hl(0, "BlinkCmpMenu", { bg = dark })
+vim.api.nvim_set_hl(0, "BlinkCmpDoc", { bg = dark })
 
 -- per-filetype backgound:
 vim.api.nvim_create_autocmd("FileType", {

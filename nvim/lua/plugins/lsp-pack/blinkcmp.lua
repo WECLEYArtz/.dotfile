@@ -16,7 +16,7 @@ return {
 
 			["<C-space>"] = {
 				function(cmp)
-					cmp.show({ providers = { "snippets" } })
+					cmp.show()
 				end,
 			},
 
@@ -31,7 +31,7 @@ return {
 
 		completion = {
 			keyword = {
-				range = "full",
+				range = "prefix",
 			},
 
 			accept = {
@@ -75,6 +75,11 @@ return {
 
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer" },
+			providers = {
+				lsp = {
+					score_offset = 1000,
+				},
+			},
 		},
 		signature = {
 			enabled = true,
