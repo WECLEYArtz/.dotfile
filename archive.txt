@@ -61,3 +61,19 @@ SMLINK=	/home/wec/.alacritty.toml
 TARGET=	/home/wec/.dotphile/picom.conf
 SMLINK=	/home/wec/.config/picom/picom.conf
 
+[ neovide ]
+TARGET=	/home/wec/.dotphile/neovide
+SMLINK=	/home/wec/.config/neovide
+
+[ .sqliterc ]
+TARGET=	/home/wec/.dotphile/.sqliterc
+SMLINK=	/home/wec/.sqliterc
+
+[ .zshrc ]
+TARGET=	/home/wec/.dotphile/.zshrc
+SMLINK=	/home/wec/.zshrc
+
+[ .zshenv ]
+TARGET=	/home/wec/.dotphile/.zshenv
+SMLINK=	/home/wec/.zshenv
+

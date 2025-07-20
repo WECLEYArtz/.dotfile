@@ -1,0 +1,39 @@
+backtraces_path = "/path/to/neovide_backtraces.log" # see below for the default platform specific location
+fork = false
+frame = "full"
+idle = true
+maximized = false
+mouse-cursor-icon = "arrow"
+neovim-bin = "/usr/bin/nvim" # in reality found dynamically on $PATH if unset
+no-multigrid = false
+srgb = true
+tabs = true
+theme = "auto"
+title-hidden = true
+vsync = false
+wsl = false
+
+[font]
+size = 9
+hinting = "full"
+edging = "antialias"
+
+[[font.normal]]
+family = "JetBrains Mono"
+style = "W400"
+
+# You can set a different font for fallback
+[[font.normal]]
+family = "Symbols Nerd Font"
+style = "Normal"
+
+[[font.bold]]
+family = "JetBrains Mono"
+style = "W602"
+
+# No need to specify fallback in every variant, if omitted or specified here
+# but not found, it will fallback to normal font with this weight which is bold
+# in this case.
+[[font.bold]]
+family = "Symbols Nerd Font"
+style = "Bold"
