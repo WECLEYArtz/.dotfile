@@ -33,18 +33,17 @@ ArrowsToggle() -- Toggle arrows to true;
 
 --			FILES EXPLORER
 vim.keymap.set("n", "<leader>e", "<Cmd>Neotree reveal_force_cwd<CR>")
---			ALPHA DASH_BOARD
-vim.keymap.set("n", "<leader>ad", "<Cmd>Alpha<CR>")
+--			DASH_BOARD
+vim.keymap.set("n", "<leader>d", "<Cmd>Alpha<CR>")
 --			TABS (abandoned in favor of BUFFERS)
 -- vim.keymap.set({ "n" }, "<leader>nt", vim.cmd.tabnew)
 -- vim.keymap.set({ "n" }, "<leader>xt", vim.cmd.tabclose)
 -- vim.keymap.set({ "n" }, "<leader>t", vim.cmd.tabnext)
 -- vim.keymap.set({ "n" }, "<leader>T", vim.cmd.tabprevious)
 
-----			BUFFERS (actually fuck this, we telescoping)
---vim.keymap.set({ "n" }, "<leader>b", vim.cmd.bnext)
---vim.keymap.set({ "n" }, "<leader>B", vim.cmd.bprevious)
---vim.keymap.set({ "n" }, "<leader>db", vim.cmd.bd)
+--			BUFFERS
+vim.keymap.set({ "n" }, "<C-tab>", vim.cmd.bnext)
+vim.keymap.set({ "n" }, "<C-S-tab>", vim.cmd.bprevious)
 --			WINDOWS MOTION
 vim.keymap.set("n", "<leader>wn", "<C-W>j")
 vim.keymap.set("n", "<leader>we", "<C-W>k")
@@ -62,21 +61,26 @@ vim.keymap.set("n", "<leader>wH", "<C-W>H")
 vim.keymap.set("n", "<leader>wo", vim.cmd.only)
 
 --			SPLIT
-vim.keymap.set("n", "<leader>sv", vim.cmd.vsplit)
-vim.keymap.set("n", "<leader>sh", vim.cmd.split)
+vim.keymap.set("n", "<leader>wsv", vim.cmd.vsplit)
+vim.keymap.set("n", "<leader>wsh", vim.cmd.split)
 
 --			BETTER ESCAPE
 vim.keymap.set({ "n", "v", "i" }, "<leader>x", "<Esc>:lua ArrowsToggle(true)<CR>")
 --			BETTER UNDO
 vim.keymap.set("n", "U", "<C-r>")
 
+--			BETTER COLEMAK SELECT
+vim.keymap.set("n", "vi", "vi")
+
 --			BETTER WRITE
 vim.keymap.set("n", "<leader>ww", vim.cmd.write)
 --			BETTER QUIT
-vim.keymap.set("n", "<leader>q", vim.cmd.quit)
-vim.keymap.set("n", "<leader>Q", vim.cmd.quitall)
+vim.keymap.set("n", "<leader>qq", vim.cmd.quit)
+-- vim.keymap.set("n", "<leader>Q", vim.cmd.quitall)
 
 --			NO HIGHLIGHT
 vim.keymap.set("n", "<leader>no", vim.cmd.nohl)
 --			UNDOTREE
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+--			OPEN DIAGNOSES
+vim.keymap.set("n", "<leader>", vim.cmd.UndotreeToggle)

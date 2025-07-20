@@ -18,16 +18,20 @@ return {
 					["n"] = require("telescope.actions").move_selection_next,
 					["d"] = require("telescope.actions").delete_buffer,
 					["e"] = require("telescope.actions").move_selection_previous,
+
+					-- Nice easy exit
+					["q"] = function(prompt_bufnr)
+						require("telescope.actions").close(prompt_bufnr)
+					end,
 				},
 			},
 		},
 		pickers = {
 			buffers = {
-				initial_mode = "normal",
+				-- initial_mode = "normal",
 				sort_lastused = true,
 				sort_mru = true,
 				show_all_buffers = false,
-				-- ignore_current_buffer = true,
 			},
 		},
 	}),

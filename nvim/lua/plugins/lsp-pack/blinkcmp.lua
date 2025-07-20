@@ -1,5 +1,4 @@
 return {
-
 	"saghen/blink.cmp",
 	dependencies = { "rafamadriz/friendly-snippets" },
 
@@ -67,9 +66,6 @@ return {
 			-- Display a preview of the selected item on the current line
 			ghost_text = {
 				enabled = false,
-			},
-			trigger = {
-				show_on_x_blocked_trigger_characters = {},
 			},
 		},
 

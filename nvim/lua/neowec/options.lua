@@ -23,7 +23,13 @@ vim.opt.clipboard = "unnamedplus"
 -- vim.api.nvim_command('filetype indent off')
 -- vim.opt.smartindent = false
 
+vim.opt.foldmethod = "manual"
+-- vim.opt.foldexpr = "v:lua.vim.lsp.foldexpr()"
+-- vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldlevel = 99
 vim.opt.foldcolumn = "1"
+vim.opt.foldtext = ""
+vim.opt.foldnestmax = 4
 -- vim.opt.winborder = "single"
 
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -31,6 +37,18 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank({ higroup = "Visual" })
 	end,
 })
+vim.api.nvim_create_autocmd("BufWinLeave", {
+	pattern = { "*.*" },
+	command = "mkview",
+})
+
+vim.api.nvim_create_autocmd("BufWinEnter", {
+	pattern = { "*.*" },
+	command = "silent! loadview",
+})
 vim.diagnostic.config({
 	virtual_lines = true,
 })
+
+-- better pasting
+vim.api.nvim_set_keymap("c", "<sc-v>", "<C-R>0", { noremap = true })
