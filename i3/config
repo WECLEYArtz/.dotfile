@@ -11,34 +11,52 @@
 
 set $mod Mod1
 
+default_floating_border pixel 1
+hide_edge_borders vertical
+gaps inner 5
+# gaps outer 5
+# gaps outer current plus 5
+# gaps horizontal current plus 40
+# gaps outer current toggle 60
+
+for_window [class="^.*"] border pixel 2
 # steam child windows floating fixes
-for_window [window_role="pop-up"] floating enable
-for_window [title="^Event Tester$"] floating enable
-for_window [class="KeePassXC"] floating enable
 for_window [class="steam"] floating enable
 for_window [class="steam" title="^Steam$"] floating disable
 
+for_window [window_role="pop-up"] floating enable
+for_window [title="^Event Tester$"] floating enable
+for_window [class="KeePassXC"] floating enable
+
+for_window [class="krita"] border none
 
 
 exec i3 --shmlog-size=26214400
 
-# = FASTER RPEAT KEY, THIS ONE HAS TO BE GLOBAL..
+# Keyboard and input setup
 exec_always --no-startup-id xset r rate 250 25
+exec_always --no-startup-id xmodmap -e 'keycode 108 = Alt_L'
+exec --no-startup-id setxkbmap -layout us,us -variant colemak, -option grp:win_space_toggle -option caps:backspace
 # = INCASE SHIT DIDNT WORK ON ANOTHER KEYBOARD, RUN:
 # xmodmap -e 'keycode 108 = Alt_L' && xset r rate 250 25
 
-# = SETUP MULTI LAYOUTS
-exec --no-startup-id setxkbmap -layout us,us -variant colemak, -option grp:win_space_toggle -option caps:backspace
-
-# = REMAP ALTGR TO ALT_L
-exec_always --no-startup-id xmodmap -e 'keycode 108 = Alt_L'
-
-# exec_always --no-startup-id autotiling
+# Visual setup
 exec --no-startup-id feh --bg-fill .themes/.Backgrounds/Ice.png
-exec --no-startup-id xfce4-clipman
 exec_always --no-startup-id picom -b --config ~/.config/picom/picom.conf
+exec_always --no-startup-id redshift -t 5500:3700
 
+# Applications
+exec --no-startup-id xfce4-clipman
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
+# Quick application launchers
+bindsym $mod+shift+f exec thunar
+bindsym $mod+shift+b exec brave-browser
+
+# Workspace Assigns
+assign [class="brave-browser"] $ws3
+assign [class="discord"] $ws8
+assign [class="steam"] $ws9
 
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -64,14 +82,6 @@ client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 client.background       #ffffff
 # title_align center
 
-default_floating_border pixel 0
-for_window [class="^.*"] border pixel 2
-hide_edge_borders vertical
-gaps inner 5
-# gaps outer 5
-# gaps outer current plus 5
-# gaps horizontal current plus 40
-# gaps outer current toggle 60
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -251,8 +261,4 @@ mode "resize" {
 }
 
 bindsym $mod+p mode "resize"
-
-exec_always --no-startup-id redshift -t 5500:3700
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
 
