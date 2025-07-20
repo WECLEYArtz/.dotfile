@@ -1,3 +1,6 @@
+let &t_SI = "\e[5 q"
+let &t_EI = "\e[1 q"
+
 let mapleader = " "
 let g:Arrows=v:false
 
@@ -52,8 +55,8 @@ nnoremap <leader>no <cmd>nohl<CR>
 
 
 "	BETTER QUITE AND REWRITE
-nnoremap <leader>q <cmd>q<CR>
-nnoremap <leader>w <cmd>w<CR>
+nnoremap <leader>qq <cmd>q<CR>
+nnoremap <leader>ww <cmd>w<CR>
 
 
 " TABS
@@ -84,3 +87,5 @@ set smartcase           " ...unless uppercase letter is used
 set incsearch           " Show match while typing
 set hlsearch            " Highlight all matches
 colorscheme torte
+hi Normal guibg=NONE ctermbg=NONE
+syntax on
