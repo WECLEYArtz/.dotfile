@@ -36,7 +36,8 @@ exec i3 --shmlog-size=26214400
 # Keyboard and input setup
 exec_always --no-startup-id xset r rate 250 25
 exec_always --no-startup-id xmodmap -e 'keycode 108 = Alt_L'
-exec --no-startup-id setxkbmap -layout us,us -variant colemak, -option grp:win_space_toggle -option caps:backspace
+exec --no-startup-id setxkbmap -layout us,us -variant colemak, -option grp:win_space_toggle
+exec xmodmap -e "keycode 66 = BackSpace"
 # = INCASE SHIT DIDNT WORK ON ANOTHER KEYBOARD, RUN:
 # xmodmap -e 'keycode 108 = Alt_L' && xset r rate 250 25
 

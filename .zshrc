@@ -11,6 +11,8 @@ bindkey -e
 bindkey "${terminfo[kcuu1]}" history-search-backward  # Up arrow
 bindkey "${terminfo[kcud1]}" history-search-forward   # Down arrow
 bindkey 'Y' end-of-line #accept suggestion with "Y" lets see how this gows lmao
+bindkey '^[[1;5C' forward-word
+bindkey '^[[1;5D' backward-word
 
 
 setopt appendhistory
