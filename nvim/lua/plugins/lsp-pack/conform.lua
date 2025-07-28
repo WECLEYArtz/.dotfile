@@ -20,7 +20,10 @@ return {
 			},
 		})
 		conform.formatters.prettier = {
-			prepend_args = { "--use-tabs", "--prose-wrap", "always" },
+			prepend_args = { "--use-tabs", "--prose-wrap", "always", "--tab-width 4" },
+		}
+		conform.formatters.prettierd = {
+			prepend_args = { "--use-tabs", "--tab-width 4" },
 		}
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			pattern = "*",

@@ -82,5 +82,3 @@ vim.keymap.set("n", "<leader>qq", vim.cmd.quit)
 vim.keymap.set("n", "<leader>no", vim.cmd.nohl)
 --			UNDOTREE
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
---			OPEN DIAGNOSES
-vim.keymap.set("n", "<leader>", vim.cmd.UndotreeToggle)
