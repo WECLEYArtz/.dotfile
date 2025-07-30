@@ -20,35 +20,30 @@ gaps inner 5
 # gaps outer current toggle 60
 
 for_window [class="^.*"] border pixel 2
-# steam child windows floating fixes
 for_window [class="steam"] floating enable
 for_window [class="steam" title="^Steam$"] floating disable
-
 for_window [window_role="pop-up"] floating enable
 for_window [title="^Event Tester$"] floating enable
 for_window [class="KeePassXC"] floating enable
-
 for_window [class="krita"] border none
 
-
-exec i3 --shmlog-size=26214400
+# exec i3 --shmlog-size=26214400
 
 # Keyboard and input setup
 exec_always --no-startup-id xset r rate 250 25
 exec_always --no-startup-id xmodmap -e 'keycode 108 = Alt_L'
 exec --no-startup-id setxkbmap -layout us,us -variant colemak, -option grp:win_space_toggle
 exec xmodmap -e "keycode 66 = BackSpace"
-# = INCASE SHIT DIDNT WORK ON ANOTHER KEYBOARD, RUN:
-# xmodmap -e 'keycode 108 = Alt_L' && xset r rate 250 25
+# Manual method: xmodmap -e 'keycode 108 = Alt_L' && xset r rate 250 25
 
 # Visual setup
 exec --no-startup-id feh --bg-fill .themes/.Backgrounds/Ice.png
 exec_always --no-startup-id picom -b --config ~/.config/picom/picom.conf
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id redshift -t 5500:3700
 
 # Applications
 exec --no-startup-id xfce4-clipman
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Quick application launchers
 bindsym $mod+shift+f exec thunar
@@ -57,7 +52,7 @@ bindsym $mod+shift+b exec brave-browser
 # Workspace Assigns
 assign [class="brave-browser"] $ws3
 assign [class="discord"] $ws8
-assign [class="steam"] $ws9
+assign [class="steam"] $ws7
 
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -238,27 +233,27 @@ bindsym $mod+Shift+X exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+	# These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 5 px or 5 ppt
-        bindsym n resize grow height 5 px or 5 ppt
-        bindsym e resize shrink height 5 px or 5 ppt
-        bindsym i resize grow width 5 px or 5 ppt
+	# Pressing left will shrink the window’s width.
+	# Pressing right will grow the window’s width.
+	# Pressing up will shrink the window’s height.
+	# Pressing down will grow the window’s height.
+	bindsym h resize shrink width 5 px or 5 ppt
+	bindsym n resize grow height 5 px or 5 ppt
+	bindsym e resize shrink height 5 px or 5 ppt
+	bindsym i resize grow width 5 px or 5 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 5 px or 5 ppt
-        bindsym Down resize grow height 5 px or 5 ppt
-        bindsym Up resize shrink height 5 px or 5 ppt
-        bindsym Right resize grow width 5 px or 5 ppt
+	# same bindings, but for the arrow keys
+	bindsym Left resize shrink width 5 px or 5 ppt
+	bindsym Down resize grow height 5 px or 5 ppt
+	bindsym Up resize shrink height 5 px or 5 ppt
+	bindsym Right resize grow width 5 px or 5 ppt
 
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-		bindsym $mod+p mode "default"
+	# back to normal: Enter or Escape or $mod+r
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym $mod+p mode "default"
 }
 
 bindsym $mod+p mode "resize"
