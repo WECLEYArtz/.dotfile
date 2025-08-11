@@ -1,20 +1,8 @@
 return {
-	"lukas-reineke/indent-blankline.nvim",
-	main = "ibl",
-	---@module "ibl"
-	---@type ibl.config
-	opts = {},
+	"nvimdev/indentmini.nvim",
 	config = function()
-		vim.g.indent_blankline_max_indent_increase = 1
-		local highlight = {
-			"CursorColumn",
-			"Whitespace",
-		}
-
-		require("ibl").setup({
-			-- scope = { highlight = { fg = "#FFFFFF" } },
-			indent = { char = "▏" },
-			-- smart_indent_cap = true,
-		})
+		require("indentmini").setup({}) -- use default config
+		vim.cmd.highlight("indentline guifg=#253737")
+		vim.cmd.highlight("indentlinecurrent guifg=#466969")
 	end,
 }

@@ -42,8 +42,8 @@ vim.keymap.set("n", "<leader>d", "<Cmd>Alpha<CR>")
 -- vim.keymap.set({ "n" }, "<leader>T", vim.cmd.tabprevious)
 
 --			BUFFERS
-vim.keymap.set({ "n" }, "<C-tab>", vim.cmd.bnext)
-vim.keymap.set({ "n" }, "<C-S-tab>", vim.cmd.bprevious)
+vim.keymap.set({ "n" }, "<tab>", vim.cmd.bnext)
+vim.keymap.set({ "n" }, "<S-tab>", vim.cmd.bprevious)
 --			WINDOWS MOTION
 vim.keymap.set("n", "<leader>wn", "<C-W>j")
 vim.keymap.set("n", "<leader>we", "<C-W>k")
