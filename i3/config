@@ -30,7 +30,7 @@ for_window [class="krita"] border none
 # exec i3 --shmlog-size=26214400
 
 # Keyboard and input setup
-exec --no-startup-id bash ./keymapping.sh
+exec --no-startup-id bash ~/.dotphile/i3/keymapping.sh
 
 # Visual setup
 exec --no-startup-id feh --bg-fill .themes/.Backgrounds/Ice.png
@@ -90,16 +90,25 @@ client.background       #ffffff
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 # exec --no-startup-id nm-applet
 
-# Use pactl to adjust volume in PulseAudio.
-# set $refresh_i3status killall -SIGUSR1 i3status
+# Brigness controls
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +7%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 7%-
 
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# Media volume controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
-
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+# Xfce screenshoter
+bindsym Print exec xfce4-screenshooter
+
 #Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 # move tiling windows via drag & drop by left-clicking into the title bar,
@@ -118,9 +127,7 @@ bindsym $mod+k kill
 
 # start dmenu (rofi) (a program launcher)
 bindcode $mod+61 exec rofi -show drun -show-icons
-# xfce screenshoter
 
-bindsym Print exec xfce4-screenshoter
 # file manager (considering...)
 # bindsym $mod+shift+f exec thunar
 
