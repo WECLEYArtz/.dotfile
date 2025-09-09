@@ -118,8 +118,6 @@ fi
 
 # Created by `pipx` on 2024-06-30 00:01:05
 export PATH="$PATH:/home/wec/.local/bin"
-export MTP=~/mnt
-export NVCONF=/home/wec/.config/nvim
 export EDITOR=/usr/bin/nvim
 export MC=/home/wec/.local/share/atlauncher/instances
 export VISUAL=/usr/bin/nvim
