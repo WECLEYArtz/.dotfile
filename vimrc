@@ -63,17 +63,17 @@ nnoremap <leader>qq <cmd>q<CR>
 nnoremap <leader>ww <cmd>w<CR>
 
 
-" TABS
-nnoremap <leader>tn <cmd>tabnew<CR>
-nnoremap <tab> <cmd>tabnext<CR>
-nnoremap <S-tab> <cmd>tabprevious<CR>
+"	BUFFRS
+nnoremap <tab> <cmd>bn<CR>
+nnoremap <S-tab> <cmd>bp<CR>
+
 
 " WINDOW
 nnoremap <leader>wn <C-W>j
 nnoremap <leader>we <C-W>k
 nnoremap <leader>wh <C-W>h
 nnoremap <leader>wi <C-W>l
-nnoremap <leader>vi vi "colmak helper
+nnoremap vi vi "colmak helper
 
 
 
