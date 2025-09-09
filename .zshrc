@@ -52,9 +52,6 @@ zinit light romkatv/powerlevel10k
 zinit light zdharma-continuum/fast-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
-zinit light Aloxaf/fzf-tab
-# Shell intergration
-eval "$(fzf --zsh)"
 
 autoload -Uz _zinit
 # (( ${+_comps} )) && _comps[zinit]=_zinit
@@ -102,3 +99,7 @@ alias l='ls -CF'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+alias francinette=/home/wec/francinette/tester.sh
+
+alias paco=/home/wec/francinette/tester.sh
