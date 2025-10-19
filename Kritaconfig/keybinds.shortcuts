@@ -1,0 +1,15 @@
+[Shortcuts]
+Activate krita action (blue)=A
+Activate krita action (green)=V
+Activate krita action (red)=Shift+A
+KisToolSelectElliptical=none
+KisToolSelectOutline=J
+KritaShape/KisToolBrush=none
+Pick misc tools=B
+Rotate canvas=R
+Scroll brush size or opacity=S
+Scroll isolated layers=I
+Scroll undo stack=Ctrl+Z; Z
+decrease_opacity=none
+edit_undo=none
+pathpoint-join=none

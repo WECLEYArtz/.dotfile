@@ -34,7 +34,7 @@ ArrowsToggle() -- Toggle arrows to true;
 --			FILES EXPLORER
 vim.keymap.set("n", "<leader>e", "<Cmd>Neotree reveal_force_cwd<CR>")
 --			DASH_BOARD
-vim.keymap.set("n", "<leader>d", "<Cmd>Alpha<CR>")
+vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)
 --			TABS (abandoned in favor of BUFFERS)
 -- vim.keymap.set({ "n" }, "<leader>nt", vim.cmd.tabnew)
 -- vim.keymap.set({ "n" }, "<leader>xt", vim.cmd.tabclose)

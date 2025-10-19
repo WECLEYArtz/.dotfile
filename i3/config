@@ -42,7 +42,7 @@ exec --no-startup-id redshift -t 5500:3700
 exec --no-startup-id xfce4-clipman
 
 # Quick application launchers
-bindsym $mod+shift+f exec thunar
+bindsym $fod+shift+f exec thunar
 bindsym $mod+shift+b exec brave-browser
 
 # Make the currently focused window a scratchpad
@@ -132,7 +132,7 @@ bindsym $mod+k kill
 # bindsym $mod+k kill
 
 # start dmenu (rofi) (a program launcher)
-bindcode 133 exec rofi -show drun -show-icons
+bindcode --release 133 exec rofi -show drun -show-icons
 
 # file manager (considering...)
 # bindsym $mod+shift+f exec thunar

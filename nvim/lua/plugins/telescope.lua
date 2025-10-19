@@ -40,6 +40,14 @@ return {
 				show_all_buffers = false,
 				path_display = { "filename_first" },
 			},
+			live_grep = {
+				path_display = { "shorten" },
+				--	search_dirs = { "./*" },
+				glob_pattern = {
+					"!node_modules",
+				},
+			},
+
 			colorscheme = { enable_preview = true },
 		},
 	}),

@@ -13,3 +13,5 @@ export MTP=~/mnt
 export MC=/home/wec/.local/share/atlauncher/instances
 export PATH="$PATH:/home/wec/.local/bin"
 export PATH="$PATH:/home/wec/.appimages"
+export PATH="$PATH:/home/wec/.cargo/bin"
+

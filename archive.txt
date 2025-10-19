@@ -81,3 +81,11 @@ SMLINK=	/home/wec/.zshenv
 TARGET=	/home/wec/.dotphile/rofi
 SMLINK=	/home/wec/.config/rofi
 
+[ dunst ]
+TARGET=	/home/wec/.dotphile/dunst
+SMLINK=	/home/wec/.config/dunst
+
+[ tmux ]
+TARGET=	/home/wec/.dotphile/tmux
+SMLINK=	/home/wec/.config/tmux
+
