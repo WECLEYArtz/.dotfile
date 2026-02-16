@@ -33,7 +33,7 @@ for_window [class="krita"] border none
 exec --no-startup-id bash ~/.dotphile/i3/keymapping.sh
 
 # Visual setup
-exec --no-startup-id feh --bg-fill .themes/.Backgrounds/Ice.png
+exec --no-startup-id feh --bg-fill ~/.themes/.Backgrounds/Ice.png
 exec_always --no-startup-id picom -b --config ~/.config/picom/picom.conf
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id redshift -t 5500:3700
