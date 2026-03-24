@@ -89,3 +89,11 @@ SMLINK=	/home/wec/.config/dunst
 TARGET=	/home/wec/.dotphile/tmux
 SMLINK=	/home/wec/.config/tmux
 
+[ sway ]
+TARGET=	/home/wec/.dotphile/sway
+SMLINK=	/home/wec/.config/sway
+
+[ waybar ]
+TARGET=	/home/wec/.dotphile/waybar
+SMLINK=	/home/wec/.config/waybar
+

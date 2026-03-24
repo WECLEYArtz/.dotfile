@@ -1,0 +1,90 @@
+* {
+    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 10px;
+}
+
+window#waybar {
+    background-color: black;
+	/* box-shadow: 3px solid #188ec4; */
+	min-height: 15px;
+}
+
+window#waybar.termite {
+    background-color: #3F3F3F;
+}
+
+button:hover {
+    background: inherit;
+	color: white
+    /* box-shadow: inset 0 -3px #ffffff; */
+}
+
+#pulseaudio:hover {
+    background-color: #a37800;
+}
+
+#workspaces button {
+    padding: 0px;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.focused {
+	color:black;
+    background: #188ec4;
+}
+
+#workspaces button.urgent {
+    box-shadow: inset 0 -3px #eb4d4b;
+}
+
+#mode {
+    background-color: #64727D;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd {
+    padding: 0 6;
+    color: white;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+@keyframes blink {
+	to {
+		background-color: #ffffff;
+	}
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
