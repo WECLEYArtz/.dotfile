@@ -4,7 +4,7 @@
 	"position": "bottom", // Waybar position (top|bottom|left|right)
 	"height": 10, // Waybar height (to be removed for auto height)
 	// "width": 1280, // Waybar width
-	"spacing": 4, // Gaps between modules (4px)
+	"spacing": 6, // Gaps between modules (4px)
 	// Choose the order of the modules
 	"modules-left": [
 		"sway/workspaces",
@@ -13,24 +13,19 @@
 		"custom/media",
 		"tray"
 	],
-	// "modules-center": [
-	// 	"sway/window"
-	// ],
 	"modules-right": [
-		"mpd",
-		"idle_inhibitor",
-		"pulseaudio",
+		"sway/language",
+		// "keyboard-state",
+		"memory",
+		"cpu",
 		"network",
 		"power-profiles-daemon",
-		"cpu",
-		"memory",
+		"pulseaudio",
 		"temperature",
-		"backlight",
-		"keyboard-state",
-		"sway/language",
 		"battery",
 		"battery#bat2",
 		"clock",
+		"idle_inhibitor",
 		"custom/power"
 	],
 	// Modules configuration
@@ -126,11 +121,11 @@
 		"format": "{temperatureC}°C {icon}",
 		"format-icons": ["", "", ""]
 	},
-	"backlight": {
-		// "device": "acpi_video1",
-		"format": "{percent}% {icon}",
-		"format-icons": ["", "", "", "", "", "", "", "", ""]
-	},
+	// "backlight": {
+	// 	// "device": "acpi_video1",
+	// 	"format": "{percent}% {icon}",
+	// 	"format-icons": ["", "", "", "", "", "", "", "", ""]
+	// },
 	"battery": {
 		"states": {
 			// "good": 95,
@@ -188,28 +183,26 @@
 		},
 		"on-click": "pavucontrol"
 	},
-	"custom/media": {
-		"format": "{icon} {text}",
-		"return-type": "json",
-		"max-length": 40,
-		"format-icons": {
-			"spotify": "",
-			"default": "🎜"
-		},
-		"escape": true,
-		"exec": "/usr/share/waybar/custom_modules/mediaplayer.py 2> /dev/null" // Script in resources folder
-		// "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-	},
+	// "custom/media": {
+	// 	"format": "{icon} {text}",
+	// 	"return-type": "json",
+	// 	"max-length": 40,
+	// 	"format-icons": {
+	// 		"spotify": "",
+	// 		"default": "🎜"
+	// 	},
+	// 	"escape": true,
+	// 	"exec": "/usr/share/waybar/custom_modules/mediaplayer.py 2> /dev/null"
+	// },
 	"custom/power": {
 		"format" : "⏻ ",
 		"tooltip": false,
 		"menu": "on-click",
-		"menu-file": "/usr/share/waybar/custom_modules/power_menu.xml", // Menu file in resources folder
+		"menu-file": "/usr/share/waybar/custom_modules/power_menu.xml",
 		"menu-actions": {
 			"shutdown": "shutdown",
 			"reboot": "reboot",
 			"suspend": "systemctl suspend",
-			// "hibernate": "systemctl hibernate"
 		}
 	}
 }

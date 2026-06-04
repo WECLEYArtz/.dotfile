@@ -30,7 +30,7 @@ for_window [class="krita"] border none
 # exec i3 --shmlog-size=26214400
 
 # Keyboard and input setup
-exec --no-startup-id bash ~/.dotphile/i3/keymapping.sh
+exec --no-startup-id bash ~/.dotphile/keymapping.sh
 
 # Visual setup
 exec --no-startup-id feh --bg-fill ~/.themes/.Backgrounds/Ice.png
@@ -42,7 +42,7 @@ exec --no-startup-id redshift -t 5500:3700
 exec --no-startup-id xfce4-clipman
 
 # Quick application launchers
-bindsym $fod+shift+f exec thunar
+bindsym $mod+shift+f exec thunar
 bindsym $mod+shift+b exec brave-browser
 
 # Make the currently focused window a scratchpad
@@ -119,7 +119,7 @@ bindsym Print exec xfce4-screenshooter
 floating_modifier $mod
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
-tiling_drag modifier titlebar
+tiling_drag modifier
 
 # start a terminal
 bindsym $mod+Return exec alacritty
@@ -270,4 +270,3 @@ mode "resize" {
 }
 
 bindsym $mod+p mode "resize"
-

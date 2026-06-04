@@ -275,9 +275,10 @@ input type:touchpad {
 }
 
 input type:keyboard {
+	xkb_layout us,us
+	xkb_variant colemak,
+	xkb_options grp:win_space_toggle
+    xkb_options lv3:ralt_alt
 	repeat_rate 25
 	repeat_delay 250
-	xkb_layout us,us
-	xkb_variant ,colemak
-	xkb_options grp:win_space_toggle
 }

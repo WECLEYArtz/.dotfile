@@ -1,5 +1,6 @@
 call plug#begin()
     Plug 'cacharle/c_formatter_42.vim'
+	Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 call plug#end()
 
 let &t_SI = "\e[5 q"
@@ -101,14 +102,31 @@ nnoremap <leader>wH <C-W>H
 nnoremap <leader>wsv <cmd>vsplit<CR>
 nnoremap <leader>wsh <cmd>split<CR>
 
+"	CHANGE DIRECTORY
+nnoremap <leader>cd :cd %:h<CR>
+
+"	COPY DIRECTORY
+nnoremap <leader>cp :let @+ = expand('%:p:h')<CR>:echom 'Copied path'<CR>
+
+"	BETTER FOLDS
+nnoremap d<BS> zd
+nnoremap <BS> za
+vnoremap <BS> zf
+
+"	MAKE
+nnoremap <leader>m :write<CR>:make<CR>
+
+
+"	Better VI
 nnoremap vi vi
 
 set showcmd
 set rnu
 set background=dark     " Set to dark/light depending on theme
 set encoding=utf-8      " Always use UTF-8
-set clipboard=unnamedplus    " Use system clipboard
-set mouse=a                  " Enable mouse support
+
+set clipboard=unnamed
+set mouse=a                 " Enable mouse support
 set nowrap              " Don't wrap long lines
 set laststatus=2        " Always show the statusline
 set wildmenu            " Enhanced command-line completion
@@ -125,9 +143,11 @@ set ignorecase          " Case-insensitive search...
 set smartcase           " ...unless uppercase letter is used
 set incsearch           " Show match while typing
 set hlsearch            " Highlight all matches
- 
+
 
 autocmd FileType netrw nnoremap <buffer> <leader>e <cmd>bd<cr>
-nnoremap <leader>tmp i #include<unistd.h><CR>int main(int argc, char **argv)<CR>{<CR>}<CR>
-syntax on
 
+filetype plugin on
+syntax on
+set tags+=~/.vim/systags
+set omnifunc=syntaxcomplete#Complete
