@@ -1,0 +1,95 @@
+[".bash_aliases"]
+target = "/home/wec/.dotphile/.bash_aliases"
+link   = "/home/wec/.bash_aliases"
+
+[nvim]
+target = "/home/wec/.dotphile/nvim"
+link   = "/home/wec/.config/nvim"
+
+[".gitconfig"]
+target = "/home/wec/.dotphile/.gitconfig"
+link   = "/home/wec/.gitconfig"
+
+[syncd]
+target = "/home/wec/.dotphile/syncd"
+link   = "/usr/local/bin/syncd"
+
+[zathurarc]
+target = "/home/wec/.dotphile/zathurarc"
+link   = "/home/wec/.config/zathura/zathurarc"
+
+[kitty]
+target = "/home/wec/.dotphile/kitty"
+link   = "/home/wec/.config/kitty"
+
+[".bashrc"]
+target = "/home/wec/.dotphile/.bashrc"
+link   = "/home/wec/.bashrc"
+
+[Default]
+target = "/home/wec/.dotphile/Default"
+link   = "/home/wec/.config/BraveSoftware/Brave-Browser/Default"
+
+["compton.conf"]
+target = "/home/wec/.dotphile/compton.conf"
+link   = "/home/wec/.config/compton.conf"
+
+[vimrc]
+target = "/home/wec/.dotphile/vimrc"
+link   = "/home/wec/.vim/vimrc"
+
+["i3lock.sh"]
+target = "/home/wec/.dotphile/i3lock.sh"
+link   = "/home/wec/i3lock.sh"
+
+[i3]
+target = "/home/wec/.dotphile/i3"
+link   = "/home/wec/.config/i3"
+
+[polybar]
+target = "/home/wec/.dotphile/polybar"
+link   = "/home/wec/.config/polybar"
+
+[".alacritty.toml"]
+target = "/home/wec/.dotphile/.alacritty.toml"
+link   = "/home/wec/.alacritty.toml"
+
+["picom.conf"]
+target = "/home/wec/.dotphile/picom.conf"
+link   = "/home/wec/.config/picom/picom.conf"
+
+[neovide]
+target = "/home/wec/.dotphile/neovide"
+link   = "/home/wec/.config/neovide"
+
+[".sqliterc"]
+target = "/home/wec/.dotphile/.sqliterc"
+link   = "/home/wec/.sqliterc"
+
+[".zshrc"]
+target = "/home/wec/.dotphile/.zshrc"
+link   = "/home/wec/.zshrc"
+
+[".zshenv"]
+target = "/home/wec/.dotphile/.zshenv"
+link   = "/home/wec/.zshenv"
+
+[rofi]
+target = "/home/wec/.dotphile/rofi"
+link   = "/home/wec/.config/rofi"
+
+[dunst]
+target = "/home/wec/.dotphile/dunst"
+link   = "/home/wec/.config/dunst"
+
+[tmux]
+target = "/home/wec/.dotphile/tmux"
+link   = "/home/wec/.config/tmux"
+
+[sway]
+target = "/home/wec/.dotphile/sway"
+link   = "/home/wec/.config/sway"
+
+[waybar]
+target = "/home/wec/.dotphile/waybar"
+link   = "/home/wec/.config/waybar"
