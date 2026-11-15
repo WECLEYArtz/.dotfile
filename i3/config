@@ -132,7 +132,10 @@ bindsym $mod+k kill
 # bindsym $mod+k kill
 
 # start dmenu (rofi) (a program launcher)
-bindcode --release 133 exec rofi -show drun -show-icons
+
+# bindcode --release 133 exec rofi -show drun -show-icons # this should've  been used , but since i have bad pc, using next line
+bindcode --release 133 exec rofi -show drun
+
 
 # file manager (considering...)
 # bindsym $mod+shift+f exec thunar
