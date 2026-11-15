@@ -32,7 +32,6 @@ zstyle ':completion:*' menu no
 # zmodload zsh/nearcolor
 
 
-
 # Use modern completion system
 autoload -Uz compinit
 compinit
@@ -57,22 +56,6 @@ autoload -Uz _zinit
 # (( ${+_comps} )) && _comps[zinit]=_zinit
 
 
-# aliases
-source "$HOME/.bash_aliases"
-
-
-
-
-
-
-# /// 			MOVED FROM .bashrc 			///
-#
-#
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
-
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -85,22 +68,9 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# colored GCC warnings and errors
-export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-export TERM=xterm-256color
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 # alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-alias francinette=/home/wec/francinette/tester.sh
-
-alias paco=/home/wec/francinette/tester.sh
