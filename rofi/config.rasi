@@ -1,8 +1,8 @@
 * {
     font:   "FiraCode Nerd Font Medium 12";
 
-    bg0:     #000000;
-    bg1:     #01090c;
+    bg0:     #070708;
+    bg1:     #000000;
     fg0:     #D3C6AA;
 
 	background: @bg1;

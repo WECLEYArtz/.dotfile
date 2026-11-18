@@ -2,98 +2,98 @@
 #used to undo a linking or redo it
 
 [ .bash_aliases ]
-TRGET=	/home/wec/.dotphile/.bash_aliases
+TRGET=	/home/wec/.dotfile/.bash_aliases
 SMLNK=	/home/wec/.bash_aliases
 
 [ nvim ]
-TRGET=	/home/wec/.dotphile/nvim
+TRGET=	/home/wec/.dotfile/nvim
 SMLNK=	/home/wec/.config/nvim
 
 [ .gitconfig ]
-TRGET=	/home/wec/.dotphile/.gitconfig
+TRGET=	/home/wec/.dotfile/.gitconfig
 SMLNK=	/home/wec/.gitconfig
 
 [ syncd ]
-TARGET=	/home/wec/.dotphile/syncd
+TARGET=	/home/wec/.dotfile/syncd
 SMLINK=	/usr/local/bin/syncd
 
 [ zathurarc ]
-TARGET=	/home/wec/.dotphile/zathurarc
+TARGET=	/home/wec/.dotfile/zathurarc
 SMLINK=	/home/wec/.config/zathura/zathurarc
 
 [ kitty ]
-TARGET=	/home/wec/.dotphile/kitty
+TARGET=	/home/wec/.dotfile/kitty
 SMLINK=	/home/wec/.config/kitty
 
 [ .bashrc ]
-TARGET=	/home/wec/.dotphile/.bashrc
+TARGET=	/home/wec/.dotfile/.bashrc
 SMLINK=	/home/wec/.bashrc
 
 [ Default ]
-TARGET=	/home/wec/.dotphile/Default
+TARGET=	/home/wec/.dotfile/Default
 SMLINK=	/home/wec/.config/BraveSoftware/Brave-Browser/Default
 
 [ compton.conf ]
-TARGET=	/home/wec/.dotphile/compton.conf
+TARGET=	/home/wec/.dotfile/compton.conf
 SMLINK=	/home/wec/.config/compton.conf
 
 [ vimrc ]
-TARGET=	/home/wec/.dotphile/vimrc
+TARGET=	/home/wec/.dotfile/vimrc
 SMLINK=	/home/wec/.vim/vimrc
 
 [ i3lock.sh ]
-TARGET=	/home/wec/.dotphile/i3lock.sh
+TARGET=	/home/wec/.dotfile/i3lock.sh
 SMLINK=	/home/wec/i3lock.sh
 
 [ i3 ]
-TARGET=	/home/wec/.dotphile/i3
+TARGET=	/home/wec/.dotfile/i3
 SMLINK=	/home/wec/.config/i3
 
 [ polybar ]
-TARGET=	/home/wec/.dotphile/polybar
+TARGET=	/home/wec/.dotfile/polybar
 SMLINK=	/home/wec/.config/polybar
 
 [ .alacritty.toml ]
-TARGET=	/home/wec/.dotphile/.alacritty.toml
+TARGET=	/home/wec/.dotfile/.alacritty.toml
 SMLINK=	/home/wec/.alacritty.toml
 
 [ picom.conf ]
-TARGET=	/home/wec/.dotphile/picom.conf
+TARGET=	/home/wec/.dotfile/picom.conf
 SMLINK=	/home/wec/.config/picom/picom.conf
 
 [ neovide ]
-TARGET=	/home/wec/.dotphile/neovide
+TARGET=	/home/wec/.dotfile/neovide
 SMLINK=	/home/wec/.config/neovide
 
 [ .sqliterc ]
-TARGET=	/home/wec/.dotphile/.sqliterc
+TARGET=	/home/wec/.dotfile/.sqliterc
 SMLINK=	/home/wec/.sqliterc
 
 [ .zshrc ]
-TARGET=	/home/wec/.dotphile/.zshrc
+TARGET=	/home/wec/.dotfile/.zshrc
 SMLINK=	/home/wec/.zshrc
 
 [ .zshenv ]
-TARGET=	/home/wec/.dotphile/.zshenv
+TARGET=	/home/wec/.dotfile/.zshenv
 SMLINK=	/home/wec/.zshenv
 
 [ rofi ]
-TARGET=	/home/wec/.dotphile/rofi
+TARGET=	/home/wec/.dotfile/rofi
 SMLINK=	/home/wec/.config/rofi
 
 [ dunst ]
-TARGET=	/home/wec/.dotphile/dunst
+TARGET=	/home/wec/.dotfile/dunst
 SMLINK=	/home/wec/.config/dunst
 
 [ tmux ]
-TARGET=	/home/wec/.dotphile/tmux
+TARGET=	/home/wec/.dotfile/tmux
 SMLINK=	/home/wec/.config/tmux
 
 [ sway ]
-TARGET=	/home/wec/.dotphile/sway
+TARGET=	/home/wec/.dotfile/sway
 SMLINK=	/home/wec/.config/sway
 
 [ waybar ]
-TARGET=	/home/wec/.dotphile/waybar
+TARGET=	/home/wec/.dotfile/waybar
 SMLINK=	/home/wec/.config/waybar
 
