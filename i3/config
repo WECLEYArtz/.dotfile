@@ -53,7 +53,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id redshift -t 5500:3700
 
 # Applications
-exec --no-startupeid xfce4-clipman
+exec --no-startup-id xfce4-clipman
 
 # Quick application launchers
 bindsym $mod+shift+f exec thunar
