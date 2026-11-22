@@ -142,7 +142,7 @@ bindsym $mod+shift+Return exec alacritty --working-directory "`xcwd`"
 # bindsym $mod+shift+Return exec pwd | cb ; exec vb | xargs alacritty --working-directory
 
 # kill focused window
-bindsym $mod+BackSpace kill
+bindsym $mod+Shift+BackSpace kill
 # bindsym $mod+k kill
 
 # start dmenu (rofi) (a program launcher)
